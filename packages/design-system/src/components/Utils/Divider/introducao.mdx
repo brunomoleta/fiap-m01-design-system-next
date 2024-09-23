@@ -1,0 +1,31 @@
+import {Meta} from "@storybook/blocks";
+
+
+<Meta title='Utils/Divider/Sobre o Componente ➗' />
+
+# ➗ Divider ➗
+---
+
+### Para que serve
+
+Dividers são uma maneira de agrupar visualmente componentes e criar hierarquia.
+
+
+Um divider é uma linha fina colocada horizontalmente entre elementos,
+usados para separar blocos de informação em duas partes ou para separar
+diferentes partes de uma página em uma lista.
+
+### Acessibilidade
+---
+
+Dividers são elementos visualmente decorativos
+mas podem carregar valor semântico para o leitor de tela.
+Por isso foi criada a prop `isSemantic`.
+
+Ou seja, caso o `Divider` seja colocada entre seções diferentes
+da página a prop deve ser passada como `true`.
+
+Caso esteja entre `Cards` do mesmo assunto, continua o mesmo assunto,
+então é melhor passar `isSemantic={false}`.
+
+---
