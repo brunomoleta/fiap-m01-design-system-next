@@ -1,6 +1,6 @@
 export default {
-  'spacing-s': '8px',
-  'spacing-m': '16px',
-  'spacing-l': '24px',
+  'spacing-sm': '8px',
+  'spacing-md': '16px',
+  'spacing-lg': '24px',
   'spacing-xl': '32px',
 } as const;

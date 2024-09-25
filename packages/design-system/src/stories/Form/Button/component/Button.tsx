@@ -5,7 +5,7 @@ import '../button.css';
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
-  /** What background color to use */
+  /** What background backgroundColors to use */
   backgroundColor?: string;
   /** How large should the button be? */
   size?: 'small' | 'medium' | 'large';

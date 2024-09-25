@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import '@/main.css';
 
 const preview: Preview = {
   parameters: {
@@ -6,6 +7,12 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
+      },
+      options: {
+        storySort: {
+          order: ['✨ Comece por aqui ✨', 'Foundations', '*'],
+          method: 'alphabetical',
+        },
       },
     },
   },
