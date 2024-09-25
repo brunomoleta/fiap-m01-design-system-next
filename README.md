@@ -178,7 +178,7 @@ na programação o que temos na parte do Design em nosso Figma.
 │   │   ├── comecePorAqui.mdx
 │   │   └── Configure.mdx
 │   └── tokens
-│       ├── colors.ts
+│       ├── colors.complete.ts
 │       ├── grid.ts
 │       ├── spacing.ts
 │       ├── typography.ts

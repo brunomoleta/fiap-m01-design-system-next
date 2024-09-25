@@ -1,12 +1,13 @@
 
 
 type Props = {
-  /** Divider color */
+  /** Cor */
   color?: 'light' | 'medium' | 'green';
-  /** Should this line have a semantic meaning? */
+  /** O elemento é semântico? */
   isSemantic: boolean;
 };
 
+/** Serve para Separar componentes visualmente. */
 const Divider = ({ color = 'light', isSemantic }: Props) => {
   return !isSemantic ? <div color={color} /> : <hr color={color} />;
 };

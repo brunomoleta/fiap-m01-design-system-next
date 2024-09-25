@@ -1,11 +1,14 @@
+import React from "react";
+
 interface ISpacingProps {
   spaceEntry: [string, string];
+  children: React.ReactNode;
 }
 
-const Spacing = ({ spaceEntry: [key, value] } : ISpacingProps) => {
+const Spacing = ({ spaceEntry: [key, value], children } : ISpacingProps) => {
   return (
     <div className={`flex flex-col w-fit`}>
-      <canvas className={`h-16 w-${key} bg-background-accent`}/>
+      {children}
       <div className={`flex flex-col`}>
         <span className={`w-full font-semibold`}>{key.toUpperCase()}</span>
         <span>{value}</span>
