@@ -10,9 +10,3 @@ export type FillIconProps = BaseIconProps & {
   stroke?: never;
 };
 
-export type StrokeIconProps = BaseIconProps & {
-  stroke: keyof typeof colors;
-  fill?: never;
-};
-
-export type IconProps = FillIconProps | StrokeIconProps;

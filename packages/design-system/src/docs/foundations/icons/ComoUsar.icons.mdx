@@ -1,0 +1,28 @@
+import {Meta} from "@storybook/blocks";
+
+<Meta title='foundations/Icons/📐 Como aplicar' />
+
+### 📐 Como aplicar o `Icon` 🖥️
+---
+
+Como cada `Icon` é uma tag `svg`, ele deve sempre ser envolvido
+por uma tag de:
+- `Link`(navegação);
+- `button`(ação);
+- `span` ou `div` (quando é apenas visual);
+
+Quando presente, a `aria-label` está na `tag` que envolve o `Icon`,
+independente de quem o envelopa 🐣.
+
+````tsx
+import {FacebookIcon} from "@storybook/icons";
+import Link from "next/link";
+
+// [...]
+    <Link aria-label='Siga-nos no Facebook'>
+      <FacebookIcon fill='background-accent' height={24} width={24}/>
+    </Link>
+// [...]
+````
+
+---
