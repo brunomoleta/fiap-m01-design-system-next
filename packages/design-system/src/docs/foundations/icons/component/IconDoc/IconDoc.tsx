@@ -7,7 +7,7 @@ interface IconDocProps {
 
 const IconDoc = ({ children, componentName }: IconDocProps) => {
   return (
-    <div className={'flex justify-between items-center gap-spacing-lg '}>
+    <div className={'flex items-center gap-spacing-lg '}>
       <div className={'border-background-medium-grey border-2 w-fit p-spacing-lg rounded-md shadow-md'}>{children}</div >
       <span> {componentName} </span>
     </div>

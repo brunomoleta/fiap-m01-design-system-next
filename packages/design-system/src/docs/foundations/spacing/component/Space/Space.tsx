@@ -7,7 +7,7 @@ interface ISpacingProps {
 
 const Spacing = ({ spaceEntry: [key, value], children } : ISpacingProps) => {
   return (
-    <div className={`flex flex-col w-fit`}>
+    <div className={`flex flex-col w-fit gap-spacing-sm`}>
       {children}
       <div className={`flex flex-col`}>
         <span className={`w-full font-semibold`}>{key.toUpperCase()}</span>
