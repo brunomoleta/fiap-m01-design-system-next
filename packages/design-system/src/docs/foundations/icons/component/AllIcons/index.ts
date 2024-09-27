@@ -1,2 +1,2 @@
-export * from './Allicons';
-export { default } from './Allicons';
+export * from "./Allicons";
+export { default } from "./Allicons";

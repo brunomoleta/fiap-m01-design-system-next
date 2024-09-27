@@ -1,2 +1,2 @@
-export * from './YoutubeIcon';
-export { default } from './YoutubeIcon';
+export * from "./YoutubeIcon";
+export { default } from "./YoutubeIcon";

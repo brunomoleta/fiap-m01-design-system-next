@@ -1,2 +1,2 @@
-export * from './GiftIcon';
-export { default } from './GiftIcon';
+export * from "./GiftIcon";
+export { default } from "./GiftIcon";

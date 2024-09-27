@@ -1,2 +1,2 @@
-export * from './TextColors';
-export { default } from './TextColors';
+export * from "./TextColors";
+export { default } from "./TextColors";

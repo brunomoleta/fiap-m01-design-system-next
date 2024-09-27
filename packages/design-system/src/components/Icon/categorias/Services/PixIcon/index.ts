@@ -1,2 +1,2 @@
-export * from './PixIcon';
-export { default } from './PixIcon';
+export * from "./PixIcon";
+export { default } from "./PixIcon";

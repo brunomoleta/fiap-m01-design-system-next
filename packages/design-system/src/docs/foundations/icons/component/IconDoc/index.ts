@@ -1,2 +1,2 @@
-export * from './IconDoc';
-export { default } from './IconDoc';
+export * from "./IconDoc";
+export { default } from "./IconDoc";
