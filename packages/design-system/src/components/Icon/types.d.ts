@@ -1,4 +1,4 @@
-import {colors} from "@/tokens";
+import { colors } from "@/tokens";
 
 export type BaseIconProps = {
   width: number;
@@ -9,4 +9,3 @@ export type FillIconProps = BaseIconProps & {
   fill: keyof typeof colors;
   stroke?: never;
 };
-
