@@ -1,0 +1,24 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Colors/🍉 Gradient" />
+
+# 🍉 Gradient colors
+
+> Token de exemplo: **$background-gradient**
+
+---
+
+<section className="pt-spacing-xl grid gap-x-spacing-sm gap-y-8 ">
+  <div className={`grid gap-spacing-md w-fit`}>
+    <canvas
+      className={`bg-gradient-to-b from-background-default to-background-fade h-24 w-24`}
+    />
+    <div className={`flex flex-col`}>
+      <span className={`font-semibold`}>{"background-fade".toUpperCase()}</span>
+      <span>
+        Para aplicar faça: ``className=
+        {`bg-gradient-to-b from-background-default to-background-fade`}``
+      </span>
+    </div>
+  </div>
+</section>
