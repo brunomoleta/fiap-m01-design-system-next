@@ -1,2 +1,2 @@
-export * from './VisibilityOffIcon';
-export { default } from './VisibilityOffIcon';
+export * from "./VisibilityOffIcon";
+export { default } from "./VisibilityOffIcon";

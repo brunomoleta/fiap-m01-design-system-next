@@ -14,6 +14,9 @@ importers:
 
   packages/design-system:
     dependencies:
+      '@fontsource/inter':
+        specifier: ^5.1.0
+        version: 5.1.0
       next:
         specifier: 14.2.11
         version: 14.2.11(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -72,6 +75,9 @@ importers:
       postcss:
         specifier: ^8
         version: 8.4.47
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
       storybook:
         specifier: ^8.3.1
         version: 8.3.1
@@ -909,6 +915,9 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fontsource/inter@5.1.0':
+    resolution: {integrity: sha512-zKZR3kf1G0noIes1frLfOHP5EXVVm0M7sV/l9f/AaYf+M/DId35FO4LkigWjqWYjTJZGgplhdv4cB+ssvCqr5A==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -4768,6 +4777,11 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
 
@@ -5985,7 +5999,7 @@ snapshots:
       json5: 2.2.3
       semver: 6.3.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/generator@7.25.6':
     dependencies:
@@ -6003,7 +6017,7 @@ snapshots:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-compilation-targets@7.25.2':
     dependencies:
@@ -6024,7 +6038,7 @@ snapshots:
       '@babel/traverse': 7.25.6
       semver: 6.3.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-create-regexp-features-plugin@7.25.2(@babel/core@7.25.2)':
     dependencies:
@@ -6042,21 +6056,21 @@ snapshots:
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-member-expression-to-functions@7.24.8':
     dependencies:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-module-imports@7.24.7':
     dependencies:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-module-transforms@7.25.2(@babel/core@7.25.2)':
     dependencies:
@@ -6066,7 +6080,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-optimise-call-expression@7.24.7':
     dependencies:
@@ -6081,7 +6095,7 @@ snapshots:
       '@babel/helper-wrap-function': 7.25.0
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-replace-supers@7.25.0(@babel/core@7.25.2)':
     dependencies:
@@ -6090,21 +6104,21 @@ snapshots:
       '@babel/helper-optimise-call-expression': 7.24.7
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-simple-access@7.24.7':
     dependencies:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-skip-transparent-expression-wrappers@7.24.7':
     dependencies:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helper-string-parser@7.24.8': {}
 
@@ -6118,7 +6132,7 @@ snapshots:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/helpers@7.25.6':
     dependencies:
@@ -6142,7 +6156,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-bugfix-safari-class-field-initializer-scope@7.25.0(@babel/core@7.25.2)':
     dependencies:
@@ -6161,7 +6175,7 @@ snapshots:
       '@babel/helper-skip-transparent-expression-wrappers': 7.24.7
       '@babel/plugin-transform-optional-chaining': 7.24.8(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@7.25.0(@babel/core@7.25.2)':
     dependencies:
@@ -6169,7 +6183,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2(@babel/core@7.25.2)':
     dependencies:
@@ -6294,7 +6308,7 @@ snapshots:
       '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.25.2)
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-async-to-generator@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6303,7 +6317,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-remap-async-to-generator': 7.25.0(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-block-scoped-functions@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6321,7 +6335,7 @@ snapshots:
       '@babel/helper-create-class-features-plugin': 7.25.4(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-class-static-block@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6330,7 +6344,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-classes@7.25.4(@babel/core@7.25.2)':
     dependencies:
@@ -6342,7 +6356,7 @@ snapshots:
       '@babel/traverse': 7.25.6
       globals: 11.12.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-computed-properties@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6384,7 +6398,7 @@ snapshots:
       '@babel/helper-builder-binary-assignment-operator-visitor': 7.24.7
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-export-namespace-from@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6398,7 +6412,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-skip-transparent-expression-wrappers': 7.24.7
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-function-name@7.25.1(@babel/core@7.25.2)':
     dependencies:
@@ -6407,7 +6421,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-json-strings@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6437,7 +6451,7 @@ snapshots:
       '@babel/helper-module-transforms': 7.25.2(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-modules-commonjs@7.24.8(@babel/core@7.25.2)':
     dependencies:
@@ -6446,7 +6460,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-simple-access': 7.24.7
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-modules-systemjs@7.25.0(@babel/core@7.25.2)':
     dependencies:
@@ -6456,7 +6470,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       '@babel/traverse': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-modules-umd@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6464,7 +6478,7 @@ snapshots:
       '@babel/helper-module-transforms': 7.25.2(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-named-capturing-groups-regex@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6503,7 +6517,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-replace-supers': 7.25.0(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-optional-catch-binding@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6518,7 +6532,7 @@ snapshots:
       '@babel/helper-skip-transparent-expression-wrappers': 7.24.7
       '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-parameters@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6531,7 +6545,7 @@ snapshots:
       '@babel/helper-create-class-features-plugin': 7.25.4(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-private-property-in-object@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6541,7 +6555,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-property-literals@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6558,7 +6572,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.25.2)':
     dependencies:
@@ -6569,7 +6583,7 @@ snapshots:
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
       '@babel/types': 7.25.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-react-pure-annotations@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6598,7 +6612,7 @@ snapshots:
       babel-plugin-polyfill-regenerator: 0.6.2(@babel/core@7.25.2)
       semver: 6.3.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-shorthand-properties@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6611,7 +6625,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-skip-transparent-expression-wrappers': 7.24.7
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-sticky-regex@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6637,7 +6651,7 @@ snapshots:
       '@babel/helper-skip-transparent-expression-wrappers': 7.24.7
       '@babel/plugin-syntax-typescript': 7.25.4(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/plugin-transform-unicode-escapes@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6749,7 +6763,7 @@ snapshots:
       core-js-compat: 3.38.1
       semver: 6.3.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/preset-modules@0.1.6-no-external-plugins(@babel/core@7.25.2)':
     dependencies:
@@ -6768,7 +6782,7 @@ snapshots:
       '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-transform-react-pure-annotations': 7.24.7(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/preset-typescript@7.24.7(@babel/core@7.25.2)':
     dependencies:
@@ -6779,7 +6793,7 @@ snapshots:
       '@babel/plugin-transform-modules-commonjs': 7.24.8(@babel/core@7.25.2)
       '@babel/plugin-transform-typescript': 7.25.2(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/regjsgen@0.8.0': {}
 
@@ -6803,7 +6817,7 @@ snapshots:
       debug: 4.3.7
       globals: 11.12.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@babel/types@7.25.6':
     dependencies:
@@ -6929,9 +6943,11 @@ snapshots:
       minimatch: 3.1.2
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@eslint/js@8.57.1': {}
+
+  '@fontsource/inter@5.1.0': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -6939,7 +6955,7 @@ snapshots:
       debug: 4.3.7
       minimatch: 3.1.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
@@ -7139,7 +7155,7 @@ snapshots:
       - bluebird
       - debug
       - encoding
-      - supports-backgroundColors
+      - supports-color
       - typescript
 
   '@mdx-js/react@3.0.1(@types/react@18.3.7)(react@18.3.1)':
@@ -7209,7 +7225,7 @@ snapshots:
       lru-cache: 10.4.3
       socks-proxy-agent: 8.0.4
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@npmcli/arborist@7.5.4':
     dependencies:
@@ -7250,7 +7266,7 @@ snapshots:
       walk-up-path: 3.0.1
     transitivePeerDependencies:
       - bluebird
-      - supports-backgroundColors
+      - supports-color
 
   '@npmcli/fs@3.1.1':
     dependencies:
@@ -7291,7 +7307,7 @@ snapshots:
       semver: 7.6.3
     transitivePeerDependencies:
       - bluebird
-      - supports-backgroundColors
+      - supports-color
 
   '@npmcli/name-from-folder@2.0.0': {}
 
@@ -7329,7 +7345,7 @@ snapshots:
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
-      - supports-backgroundColors
+      - supports-color
 
   '@nrwl/devkit@19.7.3(nx@19.7.3)':
     dependencies:
@@ -7511,14 +7527,14 @@ snapshots:
       proc-log: 4.2.0
       promise-retry: 2.0.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@sigstore/tuf@2.3.4':
     dependencies:
       '@sigstore/protobuf-specs': 0.3.2
       tuf-js: 2.2.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@sigstore/verify@1.2.1':
     dependencies:
@@ -7694,7 +7710,7 @@ snapshots:
       - '@rspack/core'
       - '@swc/core'
       - esbuild
-      - supports-backgroundColors
+      - supports-color
       - uglify-js
       - webpack-cli
 
@@ -7725,7 +7741,7 @@ snapshots:
       ws: 8.18.0
     transitivePeerDependencies:
       - bufferutil
-      - supports-backgroundColors
+      - supports-color
       - utf-8-validate
 
   '@storybook/csf-plugin@8.3.1(storybook@8.3.1)(webpack-sources@3.2.3)':
@@ -7821,7 +7837,7 @@ snapshots:
       - sass
       - sass-embedded
       - sockjs-client
-      - supports-backgroundColors
+      - supports-color
       - type-fest
       - uglify-js
       - webpack-cli
@@ -7853,7 +7869,7 @@ snapshots:
       - '@storybook/test'
       - '@swc/core'
       - esbuild
-      - supports-backgroundColors
+      - supports-color
       - uglify-js
       - webpack-cli
 
@@ -7873,7 +7889,7 @@ snapshots:
       typescript: 5.6.2
       webpack: 5.94.0(esbuild@0.23.1)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@storybook/react-dom-shim@8.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.1)':
     dependencies:
@@ -8110,7 +8126,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.6.2)':
     dependencies:
@@ -8123,7 +8139,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@typescript-eslint/scope-manager@5.62.0':
     dependencies:
@@ -8145,7 +8161,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@typescript-eslint/types@5.62.0': {}
 
@@ -8163,7 +8179,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@typescript-eslint/typescript-estree@7.2.0(typescript@5.6.2)':
     dependencies:
@@ -8178,7 +8194,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   '@typescript-eslint/utils@5.62.0(eslint@8.57.1)(typescript@5.6.2)':
     dependencies:
@@ -8192,7 +8208,7 @@ snapshots:
       eslint-scope: 5.1.1
       semver: 7.6.3
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
       - typescript
 
   '@typescript-eslint/utils@7.2.0(eslint@8.57.1)(typescript@5.6.2)':
@@ -8206,7 +8222,7 @@ snapshots:
       eslint: 8.57.1
       semver: 7.6.3
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
       - typescript
 
   '@typescript-eslint/visitor-keys@5.62.0':
@@ -8389,7 +8405,7 @@ snapshots:
     dependencies:
       debug: 4.3.7
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   aggregate-error@3.1.0:
     dependencies:
@@ -8607,7 +8623,7 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.25.2)
       semver: 6.3.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   babel-plugin-polyfill-corejs3@0.10.6(@babel/core@7.25.2):
     dependencies:
@@ -8615,14 +8631,14 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.25.2)
       core-js-compat: 3.38.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   babel-plugin-polyfill-regenerator@0.6.2(@babel/core@7.25.2):
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.25.2)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   balanced-match@1.0.2: {}
 
@@ -8670,7 +8686,7 @@ snapshots:
       type-is: 1.6.18
       unpipe: 1.0.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   boolbase@1.0.0: {}
 
@@ -9514,7 +9530,7 @@ snapshots:
       debug: 4.3.7
       esbuild: 0.23.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   esbuild@0.23.1:
     optionalDependencies:
@@ -9577,7 +9593,7 @@ snapshots:
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
       - eslint-plugin-import-x
-      - supports-backgroundColors
+      - supports-color
 
   eslint-import-resolver-node@0.3.9:
     dependencies:
@@ -9585,7 +9601,7 @@ snapshots:
       is-core-module: 2.15.1
       resolve: 1.22.8
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.30.0)(eslint@8.57.1):
     dependencies:
@@ -9604,7 +9620,7 @@ snapshots:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-node
       - eslint-import-resolver-webpack
-      - supports-backgroundColors
+      - supports-color
 
   eslint-module-utils@2.11.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.30.0)(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
@@ -9615,7 +9631,7 @@ snapshots:
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.30.0)(eslint@8.57.1)
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   eslint-plugin-import@2.30.0(@typescript-eslint/parser@7.2.0(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1):
     dependencies:
@@ -9643,7 +9659,7 @@ snapshots:
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
-      - supports-backgroundColors
+      - supports-color
 
   eslint-plugin-jsx-a11y@6.10.0(eslint@8.57.1):
     dependencies:
@@ -9699,7 +9715,7 @@ snapshots:
       requireindex: 1.2.0
       ts-dedent: 2.2.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
       - typescript
 
   eslint-scope@5.1.1:
@@ -9755,7 +9771,7 @@ snapshots:
       strip-ansi: 6.0.1
       text-table: 0.2.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   espree@9.6.1:
     dependencies:
@@ -9844,7 +9860,7 @@ snapshots:
       utils-merge: 1.0.1
       vary: 1.1.2
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   external-editor@3.1.0:
     dependencies:
@@ -9904,7 +9920,7 @@ snapshots:
       statuses: 2.0.1
       unpipe: 1.0.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   find-cache-dir@3.3.2:
     dependencies:
@@ -10292,7 +10308,7 @@ snapshots:
       agent-base: 7.1.1
       debug: 4.3.7
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   https-browserify@1.0.0: {}
 
@@ -10301,7 +10317,7 @@ snapshots:
       agent-base: 7.1.1
       debug: 4.3.7
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   human-signals@2.1.0: {}
 
@@ -10773,7 +10789,7 @@ snapshots:
       - bluebird
       - debug
       - encoding
-      - supports-backgroundColors
+      - supports-color
 
   levn@0.4.1:
     dependencies:
@@ -10785,7 +10801,7 @@ snapshots:
       npm-package-arg: 11.0.2
       npm-registry-fetch: 17.1.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   libnpmpublish@9.0.9:
     dependencies:
@@ -10798,7 +10814,7 @@ snapshots:
       sigstore: 2.3.1
       ssri: 10.0.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   lilconfig@2.1.0: {}
 
@@ -10918,7 +10934,7 @@ snapshots:
       promise-retry: 2.0.1
       ssri: 10.0.6
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   map-obj@1.0.1: {}
 
@@ -11150,7 +11166,7 @@ snapshots:
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   node-machine-id@1.1.12: {}
 
@@ -11250,7 +11266,7 @@ snapshots:
       npm-package-arg: 11.0.2
       proc-log: 4.2.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   npm-run-path@4.0.1:
     dependencies:
@@ -11496,7 +11512,7 @@ snapshots:
       tar: 6.2.1
     transitivePeerDependencies:
       - bluebird
-      - supports-backgroundColors
+      - supports-color
 
   pako@1.0.11: {}
 
@@ -11699,6 +11715,8 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
+  prettier@3.3.3: {}
+
   pretty-error@4.0.0:
     dependencies:
       lodash: 4.17.21
@@ -11826,7 +11844,7 @@ snapshots:
       resolve: 1.22.8
       strip-indent: 4.0.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   react-dom@18.3.1(react@18.3.1):
     dependencies:
@@ -12138,7 +12156,7 @@ snapshots:
       range-parser: 1.2.1
       statuses: 2.0.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   serialize-javascript@6.0.2:
     dependencies:
@@ -12151,7 +12169,7 @@ snapshots:
       parseurl: 1.3.3
       send: 0.19.0
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   set-blocking@2.0.0: {}
 
@@ -12237,7 +12255,7 @@ snapshots:
       '@sigstore/tuf': 2.3.4
       '@sigstore/verify': 1.2.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   simple-swizzle@0.2.2:
     dependencies:
@@ -12254,7 +12272,7 @@ snapshots:
       debug: 4.3.7
       socks: 2.8.3
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   socks@2.8.3:
     dependencies:
@@ -12321,7 +12339,7 @@ snapshots:
       '@storybook/core': 8.3.1
     transitivePeerDependencies:
       - bufferutil
-      - supports-backgroundColors
+      - supports-color
       - utf-8-validate
 
   stream-browserify@3.0.0:
@@ -12641,7 +12659,7 @@ snapshots:
       debug: 4.3.7
       make-fetch-happen: 13.0.1
     transitivePeerDependencies:
-      - supports-backgroundColors
+      - supports-color
 
   tween-functions@1.2.0: {}
 

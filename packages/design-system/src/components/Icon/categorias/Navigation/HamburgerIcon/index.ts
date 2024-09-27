@@ -1,2 +1,2 @@
-export * from './HamburgerIcon';
-export { default } from './HamburgerIcon';
+export * from "./HamburgerIcon";
+export { default } from "./HamburgerIcon";

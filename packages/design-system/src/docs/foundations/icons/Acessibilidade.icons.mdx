@@ -1,17 +1,17 @@
-import {Meta} from "@storybook/blocks";
-import Error from './assets/Input-contexto-error.png'
-import Footer from './assets/footer.jpg'
+import { Meta } from "@storybook/blocks";
+import Error from "./assets/Input-contexto-error.png";
+import Footer from "./assets/footer.jpg";
 import Image from "next/image";
 
-<Meta title='Foundations/Icons/🍭 Acessibilidade' />
+<Meta title="Foundations/Icons/🍭 Acessibilidade" />
 
 # 🍭 Acessibilidade
+
 ---
 
 ### `aria-label`
 
-> O `aria-label` auxilia a pessoa que utiliza leitor de tela
-a navegar a página.
+> O `aria-label` auxilia a pessoa que utiliza leitor de tela a navegar a página.
 
 É especialmente importante quando usamos
 um `Icon` que não tem um texto descritivo ao seu lado,
@@ -27,14 +27,15 @@ Por isso a necessidade é de caso a caso.
 ---
 
 ## Exemplo 01: Quando há um texto descritivo junto ao `Icon`
+
 Aqui é mostrada uma mensagem de erro à pessoa usuária,
 existe uma mensagem semântica e o ícone é apenas ilustrativo.
 
-<Image src={Error} alt=''/>
+<Image src={Error} alt="" />
 
-> Por isso nesta situação _não é necessário_ colocar um ``aria-label`` nele. 😉
+> Por isso nesta situação _não é necessário_ colocar um `aria-label` nele. 😉
 
-```` tsx
+```tsx
 [...]
     <span>
         <ErrorFilledIcon height={15} width={15} stroke={'error'} />
@@ -45,19 +46,20 @@ existe uma mensagem semântica e o ícone é apenas ilustrativo.
         solicite um novo código.
     </span>
 [...]
-````
+```
 
 ---
+
 ## Quando o ícone está só
 
 ### Exemplo 02: Footer
+
 Na situação do `Footer` os ícones de redes sociais aparecem sós,
 sem texto que os descreve.
 Logo é preciso um `aria-label` que os descreva.
 Além de colocar a rede social em si que representa o ícone, foi contextualizado(ex: `Siga-nos no {rede-social}`).
 
-
-```` tsx
+```tsx
 [...]
     <Link aria-label='Siga-nos no Instagram'>
         <InstagramIcon  height={15} width={15} fill={'text-revert'} />
@@ -69,8 +71,8 @@ Além de colocar a rede social em si que representa o ícone, foi contextualizad
         <YoutubeIcon  height={15} width={15} fill={'text-revert'} />
     </Link>
 [...]
-````
+```
 
-<Image src={Footer} alt=''/>
+<Image src={Footer} alt="" />
 
 ---

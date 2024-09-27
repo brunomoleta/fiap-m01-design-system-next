@@ -1,2 +1,2 @@
-export * from './InstagramIcon';
-export { default } from './InstagramIcon';
+export * from "./InstagramIcon";
+export { default } from "./InstagramIcon";

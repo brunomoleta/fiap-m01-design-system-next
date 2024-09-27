@@ -1,2 +1,2 @@
-export * from './Spacing';
-export { default } from './Spacing';
+export * from "./Spacing";
+export { default } from "./Spacing";

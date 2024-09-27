@@ -5,7 +5,7 @@ interface ISpacingProps {
   children: React.ReactNode;
 }
 
-const Spacing = ({ spaceEntry: [key, value], children } : ISpacingProps) => {
+const Spacing = ({ spaceEntry: [key, value], children }: ISpacingProps) => {
   return (
     <div className={`flex flex-col w-fit gap-spacing-sm`}>
       {children}
@@ -14,7 +14,7 @@ const Spacing = ({ spaceEntry: [key, value], children } : ISpacingProps) => {
         <span>{value}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Spacing;
