@@ -1,0 +1,38 @@
+import { Meta } from "@storybook/blocks";
+import IconDoc from "../component/IconDoc";
+import Allicons from "../component/AllIcons";
+import {
+  FullLogoIcon,
+  LogoIcon,
+  TextOnlyLogoIcon,
+} from "../../../../components";
+
+<Meta title="Foundations/Icons/Categorias/🏪 Branding" />
+
+# 🏪 Branding Icons
+
+---
+
+### Valores Padrão
+
+> A cor padrão é: `fill={'text-active'}`
+
+> Para `FullLogoIcon`: `height={32} width={146}`
+
+> Para `LogoIcon`: `height={27} width={27}`
+
+> Para `TextOnlyLogoIcon`: `height={23} width={46}`
+
+---
+
+<Allicons>
+  <IconDoc componentName={"LogoIcon"}>
+    <LogoIcon height={32} width={32} fill={"text-active"} />
+  </IconDoc>
+  <IconDoc componentName={"TextOnlyLogoIcon"}>
+    <TextOnlyLogoIcon height={23} width={46} fill={"text-active"} />
+  </IconDoc>
+  <IconDoc componentName={"FullLogoIcon"}>
+    <FullLogoIcon height={32} width={146} fill={"text-active"} />
+  </IconDoc>
+</Allicons>
