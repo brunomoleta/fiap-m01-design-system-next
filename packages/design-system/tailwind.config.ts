@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
-import { spacing } from "./src/tokens";
-import { fontSize } from "./src/tokens/typography/index";
+import { spacing, fontSize } from "./src/tokens";
 
 const config: Config = {
   content: [
