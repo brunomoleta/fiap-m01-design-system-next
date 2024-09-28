@@ -1,4 +1,4 @@
-import { colorsComplete } from "@/tokens";
+import { colorsComplete } from "../../../../../tokens";
 import React from "react";
 
 const BackgroundColors = () => {

@@ -1,5 +1,5 @@
 import { FillIconProps } from "@/components/Icon/types";
-import { colorsComplete } from "@/tokens";
+import { colorsComplete } from "../../../../../tokens";
 
 const VisibilityOffIcon = (props: FillIconProps) => {
   const { height, width, fill } = props;
