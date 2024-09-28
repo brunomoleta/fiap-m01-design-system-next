@@ -1,4 +1,4 @@
-import { colorsComplete } from "@/tokens";
+import { colorsComplete } from "../../../../../tokens";
 import { FillIconProps } from "@/components/Icon/types";
 
 const TextOnlyLogoIcon = (props: FillIconProps) => {

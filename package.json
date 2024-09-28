@@ -2,7 +2,9 @@
   "name": "root",
   "private": false,
   "scripts": {
-    "storybook": "cd packages/design-system && pnpm storybook"
+    "storybook": "cd packages/design-system && pnpm storybook",
+    "format": "prettier --write '**/*.{mdx,ts,tsx}'",
+    "dev": "cd packages/byte-bank && pnpm dev"
   },
   "dependencies": {},
   "devDependencies": {

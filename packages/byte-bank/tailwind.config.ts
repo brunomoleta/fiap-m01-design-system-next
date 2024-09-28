@@ -1,19 +1,13 @@
-import type { Config } from "tailwindcss";
-import { spacing, fontSize } from "./src/tokens";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/docs/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/styles/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/stories/**/*.{js,ts,jsx,tsx,mdx}",
-    "./.storybook/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
-      },
       colors: {
         "background-accent": "hsl(9, 100%, 60%)",
         "background-default": "hsl(192, 100%, 19%)",
@@ -27,14 +21,7 @@ const config: Config = {
         "text-dark-green": "hsl(192, 100%, 19%)",
         "text-default": "hsl(180, 10%, 15%)",
       },
-      fontSize: fontSize,
-      spacing: spacing,
-      gridTemplateColumns: {
-        "auto-fill-150": "repeat(auto-fill, minmax(150px, 1fr))",
-        "auto-fill-300": "repeat(auto-fill, minmax(300px, 1fr))",
-        "auto-fill-400": "repeat(auto-fill, minmax(400px, 1fr))",
-      },
-    },
+    }
   },
   plugins: [],
 };
