@@ -29,6 +29,7 @@ const config: Config = {
       },
       fontSize: fontSize,
       spacing: spacing,
+      borderRadius: spacing,
       gridTemplateColumns: {
         "auto-fill-150": "repeat(auto-fill, minmax(150px, 1fr))",
         "auto-fill-300": "repeat(auto-fill, minmax(300px, 1fr))",
