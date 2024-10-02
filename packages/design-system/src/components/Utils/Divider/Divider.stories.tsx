@@ -12,8 +12,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    color: "text-revert",
+    color: "background-accent",
     isSemantic: true,
+  },
+};
+export const Secondary: Story = {
+  args: {
+    color: "text-active",
+    isSemantic: false,
+  },
+};
+export const Invisible: Story = {
+  args: {
+    color: "text-revert",
+    isSemantic: false,
   },
 };
 
