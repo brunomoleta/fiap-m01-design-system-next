@@ -21,6 +21,19 @@ const config: Config = {
         "text-dark-green": "hsl(192, 100%, 19%)",
         "text-default": "hsl(180, 10%, 15%)",
       },
+      spacing: {
+        "spacing-sm": "8px",
+        "spacing-md": "16px",
+        "spacing-lg": "24px",
+        "spacing-xl": "32px",
+        "page-width-desktop":"1200px",
+      },
+      borderRadius: {
+        "spacing-sm": "8px",
+        "spacing-md": "16px",
+        "spacing-lg": "24px",
+        "spacing-xl": "32px",
+      }
     }
   },
   plugins: [],
