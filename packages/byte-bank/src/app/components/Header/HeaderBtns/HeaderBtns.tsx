@@ -5,7 +5,7 @@ const HeaderBtns = () => {
     <>
       <div>
         <Button variant={"secondary"}>Clique aqui</Button>
-        <Button variant={"inheritBGBlack"}>Tenho conta</Button>
+        <Button variant={"outlineGreen"}>Tenho conta</Button>
       </div>
     </>
   )

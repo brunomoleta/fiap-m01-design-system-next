@@ -1,25 +1,22 @@
 import { Meta } from "@storybook/blocks";
-import Desktop from "./assets/404/404-desktop.svg";
-import Mobile from "./assets/404/404-mobile.png";
+import Mobile from "../../../assets/404/404-mobile.svg";
 
 import Image from "next/image";
+import {Illustration} from "../../../components";
 
 <Meta title="Foundations/Illustrations/🔍 404 Not Found" />
 
 ## 🔍 404 Not Found
+> aplicar ``<Illustration chooseImage='404'/>`` na aplicação
 
 > Desktop 🖥️
 
-<Image src={Desktop} alt="" />
+<Illustration chooseImage='404'/>
 
 ---
-
 > Mobile 📱
-
 <div className={'flex gap-spacing-xl'}>
-
     <Image src={Mobile} alt=''/>
-
 </div>
 
 ---
