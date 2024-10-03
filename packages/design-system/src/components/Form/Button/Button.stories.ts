@@ -22,16 +22,16 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
 };
-export const BlackBackground: Story = {
+export const OutlineGreen: Story = {
   args: {
     children: 'Criar conta',
-    variant: 'inheritBGBlack',
+    variant: 'outlineGreen',
   },
 };
-export const WhiteBackground: Story = {
+export const OutlineOrange: Story = {
   args: {
     children: 'Criar conta',
-    variant: 'inheritBGWhite',
+    variant: 'outlineOrange',
   },
 };
 
