@@ -3,9 +3,11 @@ import RegisterIllustration from "./Register";
 import EditAccountIllustration from "./EditAccount";
 import HomeIllustration from "./Home";
 import LoginIllustration from "./Login";
+import ManIllustration from "@/components/DataDisplay/Illustrations/Dashboard/ManIllustration";
+import WomanIllustration from "@/components/DataDisplay/Illustrations/Dashboard/WomanIllustration";
 
 type Props = {
-  chooseImage: '404' | 'register' | 'editAccount' | 'home' | 'login'
+  chooseImage: '404' | 'register' | 'editAccount' | 'home' | 'login' | 'dashboardMan' | 'dashboardWoman'
 }
 
 /** Ilustração para ser renderizada. A responsividade já está prevista ;) */
@@ -13,6 +15,8 @@ const Illustration = ({chooseImage}: Props) => {
   switch (chooseImage) {
     case '404':
       return <NotFoundIllustration/>
+    case 'dashboardMan':
+      return <ManIllustration/>
     case 'login':
       return <LoginIllustration/>
     case 'editAccount':
@@ -21,6 +25,8 @@ const Illustration = ({chooseImage}: Props) => {
       return <RegisterIllustration/>
     case 'home':
       return <HomeIllustration/>
+    case 'dashboardWoman':
+      return <WomanIllustration/>
     default:
       return;
   }

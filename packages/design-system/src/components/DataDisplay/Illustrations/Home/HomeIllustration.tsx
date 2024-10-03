@@ -3,7 +3,7 @@ import Mobile from "../../../../assets/home/Ilustração Banner-mobile.svg";
 import Tablet from "../../../../assets/home/Ilustração-Banner-tablet.svg";
 import Image from "next/image";
 
-/** Ilustração renderizada quando a url não foi encontrada. */
+/** Ilustração renderizada na homepage. */
 const HomeIllustration = () => {
   return (
     <>

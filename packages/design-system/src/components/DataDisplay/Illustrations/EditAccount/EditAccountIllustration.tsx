@@ -3,7 +3,6 @@ import Mobile from "../../../../assets/editAccount/EditAccount-mobile.svg";
 import Tablet from "../../../../assets/editAccount/EditAccount-tablet.svg";
 import Image from "next/image";
 
-/** Ilustração renderizada quando a url não foi encontrada. */
 const EditAccountIllustration = () => {
   return (
     <>

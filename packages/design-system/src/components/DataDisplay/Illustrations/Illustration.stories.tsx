@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import {Meta, StoryContext, StoryObj} from '@storybook/react';
 
 import Illustration from './';
 
@@ -15,6 +15,7 @@ export const NotFound: Story = {
     chooseImage: "404"
   },
 };
+
 export const Register: Story = {
   args: {
     chooseImage: "register"
@@ -34,6 +35,27 @@ export const Login: Story = {
   args: {
     chooseImage: "login"
   },
+}
+export const DashboardMan: Story = {
+  args: {
+    chooseImage: "dashboardMan"
+  },
+  decorators: [(Story, context: StoryContext) => (
+    <div style={{backgroundColor: 'hsl(192, 100%, 19%)', padding: '1em'}}>
+      <Story {...context} />
+    </div>
+  )],
+}
+export const DashboardWoman: Story = {
+  args: {
+    chooseImage: "dashboardWoman"
+  },
+  decorators: [(Story, context: StoryContext) => (
+    <div style={{backgroundColor: 'hsl(0, 0%, 80%)', padding: '1em'}}>
+      <Story {...context} />
+    </div>
+  )],
 };
+
 
 export default meta;
