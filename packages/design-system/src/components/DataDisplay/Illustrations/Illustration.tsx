@@ -3,14 +3,14 @@ import RegisterIllustration from "./Register";
 import EditAccountIllustration from "./EditAccount";
 import HomeIllustration from "./Home";
 import LoginIllustration from "./Login";
-import ManIllustration from "@/components/DataDisplay/Illustrations/Dashboard/ManIllustration";
-import WomanIllustration from "@/components/DataDisplay/Illustrations/Dashboard/WomanIllustration";
+import ManIllustration from "./Dashboard/ManIllustration";
+import WomanIllustration from "./Dashboard/WomanIllustration";
 
 type Props = {
   chooseImage: '404' | 'register' | 'editAccount' | 'home' | 'login' | 'dashboardMan' | 'dashboardWoman'
 }
 
-/** Ilustração para ser renderizada. A responsividade já está prevista ;) */
+/** Ilustração que aceita uma prop `chooseImage` para renderizar a imagem necessária. A responsividade já está prevista ;) */
 const Illustration = ({chooseImage}: Props) => {
   switch (chooseImage) {
     case '404':
