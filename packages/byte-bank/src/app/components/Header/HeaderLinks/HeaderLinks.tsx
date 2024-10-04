@@ -1,10 +1,12 @@
-import {LogoIcon} from "../../../../../../design-system/src";
+import {FullLogoIcon} from "../../../../../../design-system/src";
 import Link from "next/link";
 
 const HeaderLinks = () => {
   return (
     <div>
-      <LogoIcon width={27} height={27} fill={"text-active"}/>
+      <Link href={'/'} aria-label='retornar para página inicial'>
+        <FullLogoIcon width={146} height={32} fill={"text-active"}/>
+      </Link>
       <nav className={'text-text-active'}>
         <Link href={'#'}>Sobre</Link>
         <Link href={'#'}>Serviços</Link>
