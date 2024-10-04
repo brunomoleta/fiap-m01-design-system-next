@@ -156,7 +156,7 @@ na programação o que temos na parte do Design em nosso Figma.
 │   ├── components
 │   │   ├── DataDisplay 
 │   │   ├── Navigation 
-│   │   │   └── Link
+│   │   │   └── StyledLink
 │   │   ├── Form 
 │   │   │   ├── Button
 │   │   │   └── Dropdown
