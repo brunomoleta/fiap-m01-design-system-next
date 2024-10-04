@@ -33,7 +33,7 @@ export default {
   },
   "text-active": {
     hsl: "hsl(111, 48, 43)",
-    hex: "#228800",
+    hex: "#47A138",
   },
   "text-dark-green": {
     hsl: "hsl(192, 100, 19)",
