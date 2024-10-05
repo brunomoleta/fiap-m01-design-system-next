@@ -3,64 +3,64 @@
     "balance": 10000,
     "transactions": [
       {
-        "date": 1727628864,
         "value": 350,
         "type_slug": "deposito",
-        "type_label": "Depósito"
+        "date": 1727628864000,
+        "id": "MzUwLWRlcG9zaXRvLTE3Mjc2Mjg4NjQwMDAw"
       },
       {
-        "date": 1727626572,
         "value": -200,
         "type_slug": "transferencia",
-        "type_label": "Transferência"
+        "date": 1727629000000,
+        "id": "MjAwLXRyYW5zZmVyZW5jaWEtMTcyNzY2NTcyMDAw"
       },
       {
-        "date": 1727938272,
         "value": 400,
         "type_slug": "deposito",
-        "type_label": "Depósito"
+        "date": 1727938272000,
+        "id": "NDAwLWRlcG9zaXRvLTE3Mjc5Mzg3MjAwMDAw"
       },
       {
-        "date": 1728031272,
         "value": -150,
         "type_slug": "saque",
-        "type_label": "Saque"
+        "date": 1728031273000,
+        "id": "MTUwLXNhcXVlLTE3MjgwMzEyNzIwMDAw"
       },
       {
-        "date": 1728102872,
         "value": 250,
         "type_slug": "deposito",
-        "type_label": "Depósito"
+        "date": 1728102875000,
+        "id": "MjUwLWRlcG9zaXRvLTE3MjgxMDI4NzIwMDAw"
       },
       {
-        "date": 1728155272,
         "value": -50,
         "type_slug": "compra",
-        "type_label": "Compra"
+        "date": 1728155278000,
+        "id": "NTAtY29tcHJhLTE3MjgxNTI3MjAwMDAw"
       },
       {
-        "date": 1728226872,
         "value": 600,
         "type_slug": "deposito",
-        "type_label": "Depósito"
+        "date": 1728226879000,
+        "id": "NjAwLWRlcG9zaXRvLTE3MjgyMjY4NzIwMDAw"
       },
       {
-        "date": 1728313272,
         "value": -100,
         "type_slug": "pagamento",
-        "type_label": "Pagamento"
+        "date": 1728313281000,
+        "id": "MTAwLXBhbWFtZW50by0xNzI4MzEzMjcyMDAw"
       },
       {
-        "date": 1728365672,
         "value": -75,
         "type_slug": "compra",
-        "type_label": "Compra"
+        "date": 1728365672000,
+        "id": "NzUtY29tcHJhLTE3MjgzNjU2NzIwMDAw"
       },
       {
-        "date": 1728425272,
         "value": 500,
         "type_slug": "deposito",
-        "type_label": "Depósito"
+        "date": 1728425273000,
+        "id": "NTAwLWRlcG9zaXRvLTE3Mjg0MjUyNzIwMDAw"
       }
     ],
     "investments": {
@@ -100,7 +100,8 @@
         "type": [
           "credit"
         ],
-        "is_active": true
+        "is_active": true,
+        "id": "RnVsYW5vIGRlIFRhbC0yNDM1"
       },
       {
         "card_holder": "Fulano de Tal",
@@ -109,7 +110,8 @@
         "type": [
           "credit"
         ],
-        "is_active": true
+        "is_active": true,
+        "id": "RnVsYW5vIGRlIFRhbC01NDMy"
       },
       {
         "card_holder": "Fulano de Tal",
@@ -118,8 +120,16 @@
         "type": [
           "debit"
         ],
-        "is_active": false
+        "is_active": false,
+        "id": "RnVsYW5vIGRlIFRhbC0zNDU2"
       }
     ]
+  },
+  "user": {
+    "create": {
+      "login": "email@email.com",
+      "password": "12345",
+      "name": "Fulano de Tal"
+    }
   }
 }

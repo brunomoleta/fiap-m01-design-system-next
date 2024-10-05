@@ -6,9 +6,9 @@ export async function GET(req: NextRequest): Promise<Response> {
   const searchParams = req.nextUrl.searchParams;
   const items = Number(searchParams.get('items'));
 
-  const data = items ? mock.account.cards.slice(0, items) : mock.account.cards;
+  const cards = items ? mock.account.cards.slice(0, items) : mock.account.cards;
 
-  return request.get({
-    data,
+  return request({
+    data: cards,
   });
 }
