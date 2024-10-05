@@ -22,6 +22,9 @@ const config: Config = {
         "text-dark-green": "hsl(192, 100%, 19%)",
         "text-default": "hsl(180, 10%, 15%)",
       },
+      gridTemplateRows: {
+        'middle-1fr': 'auto 1fr auto',
+      },
       spacing: {
         "spacing-sm": "8px",
         "spacing-md": "16px",

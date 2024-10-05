@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
-import { spacing, fontSize } from "./src/tokens";
+import type {Config} from "tailwindcss";
+import {spacing, fontSize} from "./src/tokens";
 
 const config: Config = {
   content: [
@@ -10,6 +10,12 @@ const config: Config = {
     "./.storybook/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'tablet': '600px',
+      // => @media (min-width: 640px) { ... }
+      'desktop': '900px',
+      // => @media (min-width: 1024px) { ... }
+    },
     extend: {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
