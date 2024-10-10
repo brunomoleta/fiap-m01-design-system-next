@@ -8,6 +8,20 @@ const config: Config = {
     '../../packages/design-system/src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
+    screens: {
+      'tablet': '600px',
+      // => @media (min-width: 640px) { ... }
+      'desktop': '900px',
+      // => @media (min-width: 1024px) { ... }
+    },
+    fontSize: {
+      "headline-xl": "2rem",
+      "headline-lg": "1.75rem",
+      "headline-base": "1.5rem",
+      "headline-sm": "1.25rem",
+      "text-base": "1.00rem",
+      "text-sm": "0.875rem",
+    },
     extend: {
       colors: {
         "background-accent": "hsl(9, 100%, 60%)",
