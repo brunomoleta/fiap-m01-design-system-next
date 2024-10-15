@@ -26,6 +26,7 @@ const config: Config = {
         "background-dark-grey": "hsl(183, 22%, 89%)",
         "background-medium-grey": "hsl(0, 0%, 80%)",
         "background-light-grey": "hsl(0, 0%, 97%)",
+        "background-medium-green": "hsl(111, 48%, 43%)",
         "background-light-green": "hsl(114, 22%, 91%)",
         "background-fade": "hsla(191, 100%, 19%, 0.15)",
         "text-revert": "hsl(330, 11%, 96%)",

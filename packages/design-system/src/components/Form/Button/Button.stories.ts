@@ -16,6 +16,12 @@ export const Primary: Story = {
     variant: 'primary',
   },
 };
+export const PrimaryGreen: Story = {
+  args: {
+    children: 'Criar conta',
+    variant: 'primaryGreen'
+  }
+}
 export const Secondary: Story = {
   args: {
     children: 'Criar conta',
