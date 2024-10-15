@@ -32,6 +32,7 @@ const config: Config = {
         "text-active": "hsl(111, 48%, 43%)",
         "text-dark-green": "hsl(192, 100%, 19%)",
         "text-default": "hsl(180, 10%, 15%)",
+        "text-grey": "hsl(111, 0%, 54%)",
       },
       fontSize: fontSize,
       spacing: spacing,
