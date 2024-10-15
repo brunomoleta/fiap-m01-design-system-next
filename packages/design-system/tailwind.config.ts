@@ -11,7 +11,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      'tablet': '600px',
+      'tablet': '720px',
       // => @media (min-width: 640px) { ... }
       'desktop': '900px',
       // => @media (min-width: 1024px) { ... }
