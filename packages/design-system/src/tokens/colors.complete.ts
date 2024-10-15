@@ -43,4 +43,8 @@ export default {
     hsl: "hsl(180, 10, 15)",
     hex: "#262626",
   },
+  "text-grey": {
+    hsl: "hsl(111, 0%, 54%)",
+    hex: "#8B8B8B",
+  },
 } as const;
