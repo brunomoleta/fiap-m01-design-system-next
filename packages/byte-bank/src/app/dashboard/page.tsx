@@ -1,38 +1,9 @@
 import { Header } from "$/app/components";
 import Footer from "$/app/components/Footer";
-import { 
-  WidgetContainer, 
-  Divider, 
-  Illustration, 
-  Input,
-  Select,
-  Button 
-} from "../../../../design-system/src";
+import {  WidgetContainer } from "../../../../design-system/src";
+import { Balance, Extract, Transactions } from "../components";
 
 export default function Home() {
-  const TRANSACTION_TYPES = [
-    {
-      label: 'Depósito',
-      value: 'deposito',
-    },
-    {
-      label: 'Transferência',
-      value: 'transferencia',
-    },
-    {
-      label: 'Saque',
-      value: 'saque',
-    },
-    {
-      label: 'Compra',
-      value: 'compra',
-    },
-    {
-      label: 'Pagamento',
-      value: 'pagamento',
-    },
-  ];
-
   return (
     <>
       <Header isLoggedIn={true} />
@@ -47,66 +18,12 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-spacing-lg grow">
-          <WidgetContainer
-            backgroundColor="background-default"
-            title="Olá, Usuário! :)"
-          >
-            <div className="flex justify-between align-center gap-spacing-xl max-tablet:flex-col">
-              <div className="flex flex-col grow">
-                <span className="text-text-sm mb-spacing-xl whitespace-nowrap">Quinta-feira, 08/09/2022</span>
-                <span className="text-text-baseline mb-spacing-sm">Saldo</span>
-                <Divider isSemantic={false} />
-                <span className="text-text-sm mt-spacing-md">Conta corrente</span>
-                <span className="text-headline-base mt-spacing-sm">R$ 2.500,00</span>
-              </div>
+          <Balance />
 
-              <div className="flex justify-end grow">
-                <Illustration chooseImage={"dashboardMan"}/>
-              </div>
-
-            </div>
-          </WidgetContainer>
-
-          <WidgetContainer
-            backgroundColor="background-medium-grey"
-            title="Nova transação"
-          >
-            <div className="flex justify-between gap-spacing-lg max-tablet:flex-col">
-              <div className="flex flex-col gap-spacing-xl grow order-2">
-                <Select name="transaction-type" options={TRANSACTION_TYPES} />
-                <Input
-                  name="transaction-value"
-                  label="Valor"
-                  type="number"
-                  min="0.01"
-                  max="999999"
-                  placeholder="00,00"
-                  pattern="\d*"
-                />
-                <Button variant="secondary">Concluir transação</Button>
-              </div>
-              <div className="max-tablet:order-3">
-                <Illustration chooseImage={"dashboardWoman"}/>
-              </div>
-            </div>
-          </WidgetContainer>
+          <Extract />
         </div>
 
-        <WidgetContainer
-          backgroundColor="background-light-grey"
-          title="Extrato"
-        >
-          <div className="flex flex-col gap-spacing-md min-w-56 max-tablet:min-w-full">
-            <div className="flex items-center justify-between pb-spacing-sm border-b border-text-active">
-              <div className="flex flex-col gap-spacing-sm">
-                <span className="text-text-sm text-text-active">Novembro</span>
-                <span className="text-text-baseline">Depósito</span>
-                <span className="text-headline-sm font-bold">R$ 150</span>
-              </div>
-              <span className="text-text-sm text-text-grey">19/11/2022</span>
-            </div>
-          </div>
-        </WidgetContainer>
+        <Transactions />
       </main>
       <Footer/>
     </>
