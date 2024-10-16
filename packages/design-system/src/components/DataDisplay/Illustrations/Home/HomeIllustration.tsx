@@ -1,6 +1,6 @@
 import Desktop from "../../../../assets/home/Home-desktop.svg";
-import Mobile from "../../../../assets/home/Ilustração Banner-mobile.svg";
-import Tablet from "../../../../assets/home/Ilustração-Banner-tablet.svg";
+import Mobile from "../../../../assets/home/Home-mobile.svg";
+import Tablet from "../../../../assets/home/Home-tablet.svg";
 import Image from "next/image";
 
 /** Ilustração renderizada na homepage. */
