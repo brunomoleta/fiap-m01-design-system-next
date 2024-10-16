@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      'tablet': '720px',
+      'tablet': '600px',
       // => @media (min-width: 640px) { ... }
       'desktop': '900px',
       // => @media (min-width: 1024px) { ... }
