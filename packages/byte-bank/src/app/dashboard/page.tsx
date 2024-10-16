@@ -11,9 +11,9 @@ export default function Home() {
         <div className="max-desktop:hidden">
           <WidgetContainer
             backgroundColor="background-light-grey"
-            title="Extrato"
+            title="Menu de navegação"
           >
-            teste
+            [MENU DE NAVEGAÇÃO]
           </WidgetContainer>
         </div>
 
