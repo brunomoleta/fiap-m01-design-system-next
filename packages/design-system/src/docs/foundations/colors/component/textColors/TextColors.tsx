@@ -78,6 +78,20 @@ const TextColors = () => {
           </span>
         </div>
       </div>
+      <div className={`grid gap-spacing-md w-fit`}>
+        <canvas className={`bg-text-warning h-24 w-24`} />
+        <div className={`flex flex-col`}>
+          <span className={`font-semibold`}>{"text-warning".toUpperCase()}</span>
+          <span className={`m-0`}>
+            <span className={`font-bold inline-block`}>HSL:</span>{" "}
+            {colorsComplete["text-warning"].hsl}
+          </span>
+          <span className={`m-0`}>
+            <span className={`font-bold inline-block`}>HEX:</span>{" "}
+            {colorsComplete["text-warning"].hex}
+          </span>
+        </div>
+      </div>
     </>
   );
 };

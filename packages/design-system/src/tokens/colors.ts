@@ -10,5 +10,6 @@ export default {
   "text-active": "rgb(34, 136, 0)", // HSL: hsl(111, 48%, 43%)
   "text-dark-green": "rgb(0, 102, 51)", // HSL: hsl(192, 100%, 19%)
   "text-default": "rgb(38, 38, 38)", // HSL: hsl(180, 10%, 15%)
-  "text-grey": "rgb(139, 139, 139)" // HSL: hsl(111, 0%, 54%)
+  "text-grey": "rgb(139, 139, 139)", // HSL: hsl(111, 0%, 54%)
+  "text-warning": "rgb(186, 60, 60)", // HSL: hsl(0, 51%, 48%)
 } as const;

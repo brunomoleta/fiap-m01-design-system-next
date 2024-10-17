@@ -47,4 +47,8 @@ export default {
     hsl: "hsl(111, 0%, 54%)",
     hex: "#8B8B8B",
   },
+  "text-warning": {
+    hsl: "hsl(0, 51%, 48%)",
+    hex: "#BA3C3C",
+  },
 } as const;
