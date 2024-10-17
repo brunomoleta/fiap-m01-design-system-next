@@ -1,4 +1,4 @@
-export type BtnVariants = "primary" | "secondary" | "outlineGreen" | "outlineOrange" | "inherit";
+export type BtnVariants = "primary" | "primaryGreen" | "secondary" | "outlineGreen" | "outlineOrange" | "inherit" | "primaryBlack" | "outlineBlack";
 
 export const returnClass = (variant: BtnVariants) => {
   let extraStyles: string;
@@ -23,6 +23,15 @@ export const returnClass = (variant: BtnVariants) => {
       break;
     case "outlineOrange":
       extraStyles = "border-background-accent text-background-accent";
+      break;
+    case "primaryGreen":
+      extraStyles = "border-transparent text-text-revert bg-background-medium-green transition-colors duration-500 hover:duration-200 hover:ease-in hover:bg-text-default";
+      break;
+    case "primaryBlack":
+      extraStyles = "border-transparent text-text-revert bg-black";
+      break;
+    case "outlineBlack":
+      extraStyles = "border-black text-black";
       break;
     default:
       extraStyles = "";

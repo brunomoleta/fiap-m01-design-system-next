@@ -4,6 +4,7 @@ export default {
   "background-dark-grey": "rgb(230, 230, 230)", // HSL: hsl(183, 22%, 89%)
   "background-medium-grey": "rgb(204, 204, 204)", // HSL: hsl(0, 0%, 80%)
   "background-light-grey": "rgb(248, 248, 248)", // HSL: hsl(0, 0%, 97%)
+  "background-medium-green": "rgb(71, 161, 56)", // HSL(111, 48%, 43%) 
   "background-light-green": "rgb(230, 248, 230)", // HSL: hsl(114, 22%, 91%)
   "background-fade": "rgb(0, 79, 97)",
   "text-revert": "rgb(248, 248, 248)", // HSL: hsl(330, 11%, 96%)
