@@ -1,7 +1,7 @@
 import React from "react";
 import {returnClass} from "../utils/BtnClasses";
 
-export type BtnVariants = "primary" | "primaryGreen" | "secondary" | "outlineGreen" | "outlineOrange" | "inherit";
+export type BtnVariants = "primary" | "primaryGreen" | "secondary" | "outlineGreen" | "outlineOrange" | "inherit" | "primaryBlack" | "outlineBlack";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: BtnVariants;

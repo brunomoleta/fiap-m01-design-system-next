@@ -22,6 +22,14 @@ export const PrimaryGreen: Story = {
     variant: 'primaryGreen'
   }
 }
+
+export const PrimaryBlack: Story = {
+  args: {
+    children: 'Criar conta',
+    variant: 'primaryBlack'
+  }
+}
+
 export const Secondary: Story = {
   args: {
     children: 'Criar conta',
@@ -40,6 +48,13 @@ export const OutlineOrange: Story = {
     variant: 'outlineOrange',
   },
 };
+
+export const OutlineBlack: Story = {
+  args: {
+    children: 'Criar conta',
+    variant: 'outlineBlack'
+  }
+}
 
 
 export default meta;

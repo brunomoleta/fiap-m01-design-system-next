@@ -36,6 +36,7 @@ const config: Config = {
         "text-active": "hsl(111, 48%, 43%)",
         "text-dark-green": "hsl(192, 100%, 19%)",
         "text-default": "hsl(180, 10%, 15%)",
+        "text-gray": "hsla(0, 0%, 46%, 1)"
       },
       gridTemplateRows: {
         'middle-1fr': 'auto 1fr auto',
