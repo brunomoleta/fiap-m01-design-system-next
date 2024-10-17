@@ -1,56 +1,19 @@
-import {
-  WidgetContainer,
-  Button,
-  Illustration,
-  Select,
-  Input
-} from "../../../../../../design-system/src";
+import { WidgetContainer } from "../../../../../../design-system/src";
 
 const Extract = () => {
-  const TRANSACTION_TYPES = [
-    {
-      label: 'Depósito',
-      value: 'deposito',
-    },
-    {
-      label: 'Transferência',
-      value: 'transferencia',
-    },
-    {
-      label: 'Saque',
-      value: 'saque',
-    },
-    {
-      label: 'Compra',
-      value: 'compra',
-    },
-    {
-      label: 'Pagamento',
-      value: 'pagamento',
-    },
-  ];
-
   return (
     <WidgetContainer
-      backgroundColor="background-medium-grey"
-      title="Nova transação"
+      backgroundColor="background-light-grey"
+      title="Extrato"
     >
-      <div className="flex justify-between gap-spacing-lg max-tablet:flex-col">
-        <div className="flex flex-col gap-spacing-xl grow order-2">
-          <Select name="transaction-type" options={TRANSACTION_TYPES} />
-          <Input
-            name="transaction-value"
-            label="Valor"
-            type="number"
-            min="0.01"
-            max="999999"
-            placeholder="00,00"
-            pattern="\d*"
-          />
-          <Button variant="secondary">Concluir transação</Button>
-        </div>
-        <div className="max-tablet:order-3">
-          <Illustration chooseImage={"dashboardWoman"}/>
+      <div className="flex flex-col gap-spacing-md min-w-56 max-tablet:min-w-full">
+        <div className="flex items-center justify-between pb-spacing-sm border-b border-text-active">
+          <div className="flex flex-col gap-spacing-sm">
+            <span className="text-text-sm text-text-active">Novembro</span>
+            <span className="text-text-baseline">Depósito</span>
+            <span className="text-headline-sm font-bold">R$ 150</span>
+          </div>
+          <span className="text-text-sm text-text-grey">19/11/2022</span>
         </div>
       </div>
     </WidgetContainer>
