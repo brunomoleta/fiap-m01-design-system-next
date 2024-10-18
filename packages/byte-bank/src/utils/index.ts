@@ -1,5 +1,5 @@
-export function getCurrentDate() {
-  const date = new Date();
+export function getDate($date?: Date) {
+  const currentDate = new Date();
 
   const WEEK_DAYS = [
     'domingo',
@@ -25,5 +25,11 @@ export function getCurrentDate() {
     }
   };
 
-  return formatDate(date);
-}
+  return formatDate($date || currentDate);
+};
+
+export const formatCurrency = (v: number) => v.toLocaleString('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+  minimumFractionDigits: 2,
+});

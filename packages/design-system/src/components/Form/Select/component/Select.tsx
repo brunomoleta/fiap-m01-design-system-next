@@ -8,10 +8,8 @@ type Option = {
 type Props = {
   name: string;
   label?: string;
-  placeholder?: string;
   options: Array<Option>;
-};
-
+} & React.SelectHTMLAttributes<HTMLSelectElement>;
 
 const Select = ({ name, label, options, ...props}: Props) => {
   return <div>
@@ -22,7 +20,7 @@ const Select = ({ name, label, options, ...props}: Props) => {
       className="w-full placeholder:text-text-baseline outline-none text-text-default text-text-baseline border rounded-spacing-sm h-12 border-background-default px-spacing-md"
       {...props}
     >
-      {options.map(({ value, label }, index) => (<option key={index} value={value}>{label}</option>))}
+      {options.map(({ value, label }: Option, index: number) => (<option key={index} value={value}>{label}</option>))}
     </select>
   </div>
 };

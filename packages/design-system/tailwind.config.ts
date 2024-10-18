@@ -33,6 +33,7 @@ const config: Config = {
         "text-dark-green": "hsl(192, 100%, 19%)",
         "text-default": "hsl(180, 10%, 15%)",
         "text-grey": "hsl(111, 0%, 54%)",
+        "text-warning": "hsl(0, 51%, 48%)",
       },
       fontSize: fontSize,
       spacing: spacing,
