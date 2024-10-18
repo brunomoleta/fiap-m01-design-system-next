@@ -1,6 +1,5 @@
 {
   "account": {
-    "balance": 10000,
     "transactions": [
       {
         "value": 350,

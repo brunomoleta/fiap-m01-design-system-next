@@ -2,33 +2,24 @@
 
 import { useEffect, useState } from "react";
 import { WidgetContainer, Divider, Illustration } from "../../../../../../design-system/src";
-import { getBalance } from "$/requests/dashboard";
-import { formatCurrency, getDate } from "$/utils";
+import { getDate } from "$/utils";
 
-const Balance = () => {
-  const [balance, setBalance] = useState('');
+type Props = {
+  balance: string;
+}
+
+const Balance = ({ balance }: Props) => {
+
   const [date, setDate] = useState('');
 
-  const fetchData = async () => {
-    try {
-      const resp = await getBalance();
+  const setCurrentDate = () => {
+    const { week_day, day, month, year } = getDate();
 
-      const { data } = resp;
-      
-      const formattedBalance = formatCurrency(data.data.balance);
-
-      const { week_day, day, month, year } = getDate();
-
-      setDate(`${week_day}, ${day}/${month}/${year}`);
-
-      setBalance(formattedBalance);
-    } catch (error) {
-      console.error('Erro ao recuperar balanço', error);
-    }
+    setDate(`${week_day}, ${day}/${month}/${year}`);
   };
 
   useEffect(() => {
-    fetchData();
+    setCurrentDate();
   }, [])
   return (
     <WidgetContainer

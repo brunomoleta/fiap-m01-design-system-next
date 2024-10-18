@@ -3,15 +3,17 @@
 import { useEffect, useState } from "react";
 import { Header } from "$/app/components";
 import Footer from "$/app/components/Footer";
-import { getExtract } from "$/requests/dashboard";
+import { getBalance, getExtract } from "$/requests/dashboard";
 import {  WidgetContainer } from "../../../../design-system/src";
 import { Balance, Extract, Transaction as TransactionWidget } from "../components";
 import { Transaction } from "$/types";
+import { formatCurrency } from "$/utils";
 
 export default function Home() {
   const [extract, setExtract] = useState<Transaction[]>([]);
+  const [balance, setBalance] = useState('');
 
-  const fetchData = async () => {
+  const fetchExtractData = async () => {
     try {
       const resp = await getExtract();
 
@@ -24,8 +26,28 @@ export default function Home() {
     }
   };
 
+  const fetchBalanceData = async () => {
+    try {
+      const resp = await getBalance();
+
+      const { data } = resp;
+      
+      const formattedBalance = formatCurrency(data.data.balance);
+
+      setBalance(formattedBalance);
+    } catch (error) {
+      console.error('Erro ao recuperar balanço', error);
+    }
+  };
+
+  const refreshData = () => {
+    fetchExtractData();
+    fetchBalanceData();
+  };
+
   useEffect(() => {
-    fetchData();
+    fetchExtractData();
+    fetchBalanceData();
   }, [])
 
   return (
@@ -42,9 +64,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-spacing-lg grow">
-          <Balance />
+          <Balance balance={balance} />
 
-          <TransactionWidget refreshExtract={fetchData} />
+          <TransactionWidget refreshExtract={refreshData} />
         </div>
 
         <Extract extract={extract} />
