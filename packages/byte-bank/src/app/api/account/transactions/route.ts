@@ -6,9 +6,9 @@ export async function GET(req: NextRequest): Promise<Response> {
   const searchParams = req.nextUrl.searchParams;
   const items = Number(searchParams.get('items'));
 
-  const transactions = items ? mock.account.transactions.slice(0, items) : mock.account.transactions;
+  const transactions = items ? mock.account.transactions.slice(-items) : mock.account.transactions;
 
   return request({
-    data: transactions,
+    data: transactions.reverse(),
   });
 }
