@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <Header isLoggedIn={true} />
-      <main className="p-spacing-lg flex gap-spacing-lg max-desktop:flex-col">
+      <main className="max-w-7xl mx-auto p-spacing-lg flex gap-spacing-lg max-desktop:flex-col">
         <div className="max-desktop:hidden">
           <WidgetContainer
             backgroundColor="background-light-grey"
