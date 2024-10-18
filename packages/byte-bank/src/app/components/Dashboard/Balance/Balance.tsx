@@ -1,20 +1,13 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { WidgetContainer, Divider, Illustration } from "../../../../../../design-system/src";
-import { useEffect } from "react";
 import { getBalance } from "$/requests/dashboard";
-import { getCurrentDate } from "$/utils";
+import { formatCurrency, getDate } from "$/utils";
 
 const Balance = () => {
   const [balance, setBalance] = useState('');
   const [date, setDate] = useState('');
-
-  const formatBalance = (v: number) => v.toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 2,
-  });
 
   const fetchData = async () => {
     try {
@@ -22,9 +15,9 @@ const Balance = () => {
 
       const { data } = resp;
       
-      const formattedBalance = formatBalance(data.data.balance);
+      const formattedBalance = formatCurrency(data.data.balance);
 
-      const { week_day, day, month, year } = getCurrentDate();
+      const { week_day, day, month, year } = getDate();
 
       setDate(`${week_day}, ${day}/${month}/${year}`);
 
@@ -36,8 +29,7 @@ const Balance = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
-
+  }, [])
   return (
     <WidgetContainer
       backgroundColor="background-default"

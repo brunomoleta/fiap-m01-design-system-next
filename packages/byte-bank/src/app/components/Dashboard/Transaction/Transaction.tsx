@@ -11,9 +11,14 @@ import {
   Alert
 } from "../../../../../../design-system/src";
 import { postTransaction } from "$/requests/dashboard";
-import { TRANSACTION_TYPES } from "$/requests/vars";
+import { TRANSACTION_TYPES } from "$/utils/vars";
 
-const Transactions = () => {
+interface Props {
+  refreshExtract: () => void;
+}
+
+
+const Transaction = ({ refreshExtract }: Props) => {
   const ALERT_TYPES = {
     error: {
       message: 'Não foi possível realizar a transação. Tente mais tarde.',
@@ -60,7 +65,10 @@ const Transactions = () => {
       }; 
 
       await postTransaction(payload);
+
       setAlert(true, 'success');
+
+      refreshExtract();
     } catch (error) {
       console.error('Erro ao criar transação', error);
       setAlert(true, 'error');
@@ -115,4 +123,4 @@ const Transactions = () => {
   )
 };
 
-export default Transactions;
+export default Transaction;
