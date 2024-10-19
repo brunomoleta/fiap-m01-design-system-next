@@ -3,14 +3,11 @@ import NotLoggedHeader from "$/app/components/Header/NotLoggedHeader/NotLoggedHe
 
 const Header = ({isLoggedIn}: { isLoggedIn: boolean }) => {
   return (
-    <header className=" min-h-24 bg-black m-auto w-full flex place-content-center">
-      {!isLoggedIn ?
-        <NotLoggedHeader/>
-        :
-        <HeaderAuth username={'#nome-do-usuário'}/>
-      }
-
-    </header>
+    <>
+      <header className={`min-h-24 m-auto w-full flex place-content-center ${isLoggedIn ? 'bg-background-default' : 'bg-black'}`}>
+        {isLoggedIn ? <HeaderAuth username={'#nome-do-usuário'}/> : <NotLoggedHeader/>}
+      </header>
+    </>
   )
 };
 
