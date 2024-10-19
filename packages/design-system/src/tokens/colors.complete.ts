@@ -19,6 +19,10 @@ export default {
     hsl: "hsl(0, 0, 97)",
     hex: "#f8f8f8",
   },
+  "background-medium-green": {
+    hsl: "hsl(111, 48%, 43%)",
+    hex: "#47A138"
+  },
   "background-light-green": {
     hsl: "hsl(114, 22, 91)",
     hex: "#e6f8e6",

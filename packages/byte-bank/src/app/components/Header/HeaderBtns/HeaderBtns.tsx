@@ -4,8 +4,8 @@ const HeaderBtns = () => {
   return (
     <>
       <div className={'max-tablet:hidden grid grid-cols-2 gap-spacing-lg max-desktop:gap-spacing-md'}>
-        <Button variant={"secondary"}>Clique aqui</Button>
-        <Button variant={"outlineGreen"}>Tenho conta</Button>
+        <Button variant={"primaryGreen"}>Abrir minha conta</Button>
+        <Button variant={"outlineGreen"}>Já tenho conta</Button>
       </div>
     </>
   )
