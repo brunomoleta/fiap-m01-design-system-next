@@ -1,4 +1,4 @@
-export type Transaction = {
+export type TransactionType = {
   value: number;
   type_slug: string;
   date: number;

@@ -1,23 +1,23 @@
 'use client'
 
-import { useEffect, useState } from "react";
-import { Header } from "$/app/components";
+import {useEffect, useState} from "react";
+import {Header} from "$/app/components";
 import Footer from "$/app/components/Footer";
-import { getBalance, getExtract } from "$/requests/dashboard";
-import {  WidgetContainer } from "../../../../design-system/src";
-import { Balance, Extract, Transaction as TransactionWidget } from "../components";
-import { Transaction } from "$/types";
-import { formatCurrency } from "$/utils";
+import {getBalance, getExtract} from "$/requests/dashboard";
+import {Balance, Extract, Transaction as TransactionWidget} from "../components";
+import {TransactionType} from "$/types";
+import {formatCurrency} from "$/utils";
+import NavigationMenu from "$/app/components/Dashboard/NavigationMenu";
 
-export default function Home() {
-  const [extract, setExtract] = useState<Transaction[]>([]);
+export default function DashboardHome() {
+  const [extract, setExtract] = useState<TransactionType[]>([]);
   const [balance, setBalance] = useState('');
 
   const fetchExtractData = async () => {
     try {
       const resp = await getExtract();
 
-      const { data } = resp;
+      const {data} = resp;
 
       setExtract(data.data);
       console.log(extract);
@@ -30,8 +30,8 @@ export default function Home() {
     try {
       const resp = await getBalance();
 
-      const { data } = resp;
-      
+      const {data} = resp;
+
       const formattedBalance = formatCurrency(data.data.balance);
 
       setBalance(formattedBalance);
@@ -52,24 +52,18 @@ export default function Home() {
 
   return (
     <>
-      <Header isLoggedIn={true} />
-      <main className="max-w-7xl mx-auto p-spacing-lg flex gap-spacing-lg max-desktop:flex-col">
+      <Header isLoggedIn={true}/>
+      <main className="grid grid-cols-dashboard-desktop max-w-7xl mx-auto p-spacing-lg gap-spacing-lg max-desktop:flex-col">
         <div className="max-desktop:hidden">
-          <WidgetContainer
-            backgroundColor="background-light-grey"
-            title="Menu de navegação"
-          >
-            [MENU DE NAVEGAÇÃO]
-          </WidgetContainer>
+          <NavigationMenu/>
         </div>
 
-        <div className="flex flex-col gap-spacing-lg grow">
-          <Balance balance={balance} />
-
-          <TransactionWidget refreshExtract={refreshData} />
+        <div className={'flex flex-col gap-spacing-xl'}>
+        <Balance balance={balance}/>
+        <TransactionWidget refreshExtract={refreshData}/>
         </div>
+        <Extract extract={extract}/>
 
-        <Extract extract={extract} />
       </main>
       <Footer/>
     </>

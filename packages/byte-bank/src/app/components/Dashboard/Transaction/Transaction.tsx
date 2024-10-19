@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from "react";
-import { Transaction } from '$/types';
+import React, { useState } from "react";
+import { TransactionType } from '$/types';
 import {
   WidgetContainer,
   Button,
@@ -34,12 +34,12 @@ const Transaction = ({ refreshExtract }: Props) => {
     },
   };
 
-  let AlertTypes:  'success' | 'error' | 'invalid';
+  type AlertTypes = 'success' | 'error' | 'invalid';
 
+  const [alertType, setAlertType] = useState<AlertTypes>('success');
   const [transactionType, setTransactionType] = useState('deposito');
   const [transactionValue, setTransactionValue] = useState('');
   const [loading, setLoading] = useState(false);
-  const [alertType, setAlertType] = useState<typeof AlertTypes>('success');
   const [showAlert, setShowAlert] = useState(false);
 
   const setAlert = (show: boolean, type?: 'error' | 'success' | 'invalid') => {
@@ -58,7 +58,7 @@ const Transaction = ({ refreshExtract }: Props) => {
     try {
       const nValue = Number(transactionValue);
 
-      const payload: Transaction = {
+      const payload: TransactionType = {
         value: transactionType === 'deposito' ? Math.abs(nValue) : -Math.abs(nValue),
         type_slug: transactionType,
         date: new Date().getTime(),
