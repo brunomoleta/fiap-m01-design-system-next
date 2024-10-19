@@ -23,6 +23,9 @@ const config: Config = {
       "text-sm": "0.875rem",
     },
     extend: {
+      gridTemplateColumns:{
+        'dashboard-desktop': '4fr 15fr 6fr',
+      },
       colors: {
         "background-accent": "hsl(9, 100%, 60%)",
         "background-default": "hsl(192, 100%, 19%)",
