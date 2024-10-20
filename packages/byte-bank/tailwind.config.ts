@@ -50,6 +50,7 @@ const config: Config = {
         "spacing-lg": "24px",
         "spacing-xl": "32px",
         "page-width-desktop":"1200px",
+        "100svw":"100svw"
       },
       borderRadius: {
         "spacing-sm": "8px",
