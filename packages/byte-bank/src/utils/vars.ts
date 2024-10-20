@@ -46,3 +46,4 @@ export const MONTHS = [
   'dezembro',
 ];
 
+export const tabFields = ['Início', 'Transferências', 'Investimentos', 'Outros Serviços'];

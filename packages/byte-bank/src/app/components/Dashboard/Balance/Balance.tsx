@@ -3,12 +3,10 @@
 import { useEffect, useState } from "react";
 import { WidgetContainer, Divider, Illustration } from "../../../../../../design-system/src";
 import { getDate } from "$/utils";
+import useBalanceStore from "$/app/store/balance.store";
 
-type Props = {
-  balance: string;
-}
-
-const Balance = ({ balance }: Props) => {
+const Balance = () => {
+  const {balance} = useBalanceStore()
 
   const [date, setDate] = useState('');
 
@@ -21,6 +19,7 @@ const Balance = ({ balance }: Props) => {
   useEffect(() => {
     setCurrentDate();
   }, [])
+
   return (
     <WidgetContainer
       backgroundColor="background-default"
