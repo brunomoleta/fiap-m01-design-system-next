@@ -12,21 +12,23 @@ interface Props {
   refreshExtract: () => void;
 }
 
-const Transaction = ({ refreshExtract }: Props) => {
+const Transaction = ({refreshExtract}: Props) => {
 
   return (
-    <WidgetContainer
-      backgroundColor="background-medium-grey"
-      title="Nova transação"
-    >
-      <div className="flex justify-between gap-spacing-lg max-tablet:flex-col">
-        <TransactionForm refreshExtract={refreshExtract}/>
-        <div className="max-tablet:order-3">
-          <Illustration chooseImage={"dashboardWoman"}/>
+    <>
+      <WidgetContainer
+        backgroundColor="background-medium-grey"
+        title="Nova transação"
+      >
+        <div className="flex justify-between gap-spacing-lg max-tablet:flex-col">
+          <TransactionForm refreshExtract={refreshExtract}/>
+          <div className="max-tablet:order-3">
+            <Illustration chooseImage={"dashboardWoman"}/>
+          </div>
         </div>
-      </div>
+      </WidgetContainer>
       <TransactionAlert/>
-    </WidgetContainer>
+    </>
   )
 };
 
