@@ -1,7 +1,11 @@
 import request from "$/app/api/config";
 import mock from "$/app/api/mock.json";
 
-export async function PUT(req: Request, { params }): Promise<Response>  {
+type Params = {
+  id: string;
+};
+
+export async function PUT(req: Request, { params }: { params: Params }): Promise<Response>  {
   const { id } = params;
   const payload = await req.json();
 

@@ -1,25 +1,10 @@
-import { WidgetContainer } from "../../../../../../design-system/src";
-import { Transaction } from '$/types';
-import { formatCurrency, getDate } from "$/utils";
-import { MONTHS, TRANSACTION_TYPES } from "$/utils/vars";
+import {WidgetContainer} from "../../../../../../design-system/src";
+import {formatCurrency} from "$/utils";
+import useExtractStore from "$/app/store/extract.store";
+import {getExtractDate, getTransactionLabel} from "$/app/components/Dashboard/Extract/extract.utils";
 
-interface Props {
-  extract: Transaction[];
-}
-
-const Extract = ({ extract }: Props) => {
-  const getTransactionLabel = (slug: string) => {
-    return TRANSACTION_TYPES.find(({ value }) => value === slug)?.label;
-  }
-
-  const getExtractDate = (date: number) => {
-    const { day, month, year } = getDate(new Date(date));
-
-    return {
-      formattedDate: `${day}/${month}/${year}`,
-      month: MONTHS[Number(month) - 1],
-    }
-  };
+const Extract = () => {
+  const {extract} = useExtractStore();
 
   return (
     <WidgetContainer
