@@ -12,6 +12,8 @@
     "@fontsource/inter": "^5.1.0",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.7.2",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
