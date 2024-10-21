@@ -1,18 +1,22 @@
-import request from "$/app/api/config";
+import connectMongoDB from "../../libs/mongoDB";
+import { NextResponse } from "next/server";
+import User from "$/app/models/user";
 
 export async function POST(req: Request): Promise<Response>  {
   const payload = await req.json();
 
-  const { login, password, name } = payload;
+  const { email, password, name } = payload;
 
-  if (!login || !password || !name) {
-    return new Response(JSON.stringify({ error: "Campos obrigatórios: email, senha e nome" }), {
-      status: 400,
-    });
+  if (!email || !password || !name) {
+    return NextResponse.json({ status:400, error: "Campos obrigatórios: email, senha e nome" });
   }
 
-  return request({
-    data: payload,
+  await User.create({name, email, password})
+
+  await connectMongoDB();
+
+  return NextResponse.json({
+    status: 201,
     message: 'Usuário criado com sucesso!',
-  });
+  })
 }
