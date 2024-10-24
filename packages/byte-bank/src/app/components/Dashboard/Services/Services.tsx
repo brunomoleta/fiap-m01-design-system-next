@@ -1,6 +1,5 @@
 import { 
   WidgetContainer,
-  Illustration,
   CardIcon,
   CreditMobileIcon,
   DonationIcon,

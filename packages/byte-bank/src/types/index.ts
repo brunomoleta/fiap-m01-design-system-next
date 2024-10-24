@@ -8,3 +8,15 @@ export type TransactionType = {
 export type Balance = {
   balance: number
 }
+
+export type Investment = {
+  value: number;
+  share: number;
+  investment_slug: string;
+  investment_name: string;
+}
+
+export type Investments = {
+  total: number;
+  items: Investment[];
+}
