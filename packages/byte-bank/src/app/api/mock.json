@@ -126,9 +126,9 @@
   },
   "user": {
     "create": {
-      "login": "email@email.com",
+      "email": "email@email.com",
       "password": "12345",
-      "name": "Fulano de Tal"
+      "name": "Júlio de Almeida Soares"
     }
   }
 }

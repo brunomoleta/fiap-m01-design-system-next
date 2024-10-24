@@ -2,15 +2,15 @@ import request from "$/app/api/config";
 
 export async function POST(req: Request): Promise<Response>  {
   const payload = await req.json();
-  const { login, password } = payload;
+  const { email, password } = payload;
 
-  if (!login || !password) {
+  if (!email || !password) {
     return new Response(JSON.stringify({ error: "Usuário ou senha inválidos" }), {
       status: 400,
     });
   }
 
-  const token = Buffer.from(`${login}-${password}`).toString('base64');
+  const token = Buffer.from(`${email}-${password}`).toString('base64');
 
   return request({
     data: {
