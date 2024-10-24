@@ -1,22 +1,30 @@
-import connectMongoDB from "../../libs/mongoDB";
-import { NextResponse } from "next/server";
-import User from "$/app/models/user";
+import { NextApiResponse, NextApiRequest } from 'next';
+import { UserService } from "$/server/services/user.service";
 
-export async function POST(req: Request): Promise<Response>  {
-  const payload = await req.json();
-
-  const { email, password, name } = payload;
-
+export default async function registerUser(req: NextApiRequest, res: NextApiResponse) {
+  if(req.method !== 'POST'){
+    res.status(405).json({ message: 'Only POST request is supported' });
+    return;
+  }
+  const {name, email, password} = req.body;
   if (!email || !password || !name) {
-    return NextResponse.json({ status:400, error: "Campos obrigatórios: email, senha e nome" });
+    res.status(400).json({ error: "São necessários os campos: name, email e password." });
+    return;
   }
 
-  await User.create({name, email, password})
+  const userService = new UserService();
 
-  await connectMongoDB();
-
-  return NextResponse.json({
-    status: 201,
-    message: 'Usuário criado com sucesso!',
-  })
+  try {
+    const newUser = await userService.createUser({name, email, password});
+    res.status(201).json({
+      message: 'Usuário criado com sucesso',
+      user: newUser
+    });
+  } catch (e) {
+    let errorMessage = "An error occurred.";
+    if (e instanceof Error) {
+      errorMessage = e.message;
+    }
+    throw new Error(errorMessage);
+  }
 }
