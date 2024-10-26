@@ -6,7 +6,7 @@ let cachedConnection: Connection | null = null;
 
 // Function to establish a connection to MongoDB
 export async function connectMongoDB() {
-  const mongoDbUrl = process.env.MONGODB_URL;
+  const mongoDbUrl = 'mongodb+srv://brunomoleta:DPt8pliy0KjMk5hg@bytebank.a0k6n.mongodb.net/?retryWrites=true&w=majority&appName=ByteBank';
 
   // If a cached connection exists, return it
   if (cachedConnection) {
@@ -18,7 +18,7 @@ export async function connectMongoDB() {
   }
   try {
     // If no cached connection exists, establish a new connection to MongoDB
-    const cnx = await mongoose.connect(process.env.MONGODB_URL!);
+    const cnx = await mongoose.connect(mongoDbUrl);
 
     // Cache the connection for future use
     cachedConnection = cnx.connection;

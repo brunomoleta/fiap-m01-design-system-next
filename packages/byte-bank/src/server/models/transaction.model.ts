@@ -7,7 +7,7 @@ export interface ITransaction extends Document {
   user: IUser['_id'];
 }
 
-const TransactionSchema: Schema = new mongoose.Schema({
+export const TransactionSchema: Schema = new mongoose.Schema({
   type: {
     type: String,
     enum: ['deposito', 'transferencia', 'saque', 'compra', 'pagamento'],
