@@ -1,13 +1,11 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import {UserRepository} from '$/server/repositories/user.repository';
-import {connectMongoDB} from "$/server/libs/mongoDB";
 
 export class UserService {
   private userRepository: UserRepository;
 
   constructor() {
-    connectMongoDB();
     this.userRepository = new UserRepository();
   }
 
@@ -34,7 +32,7 @@ export class UserService {
     }
 
     const token = jwt.sign(
-      { _id: user._id, email: user.email },
+      { _id: user._id },
       process.env.JWT_SECRET || 'privateKey',
       { expiresIn: '20d' }
     );
