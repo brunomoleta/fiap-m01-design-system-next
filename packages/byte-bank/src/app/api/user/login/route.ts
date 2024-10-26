@@ -2,8 +2,8 @@ import {NextRequest, NextResponse} from "next/server";
 import {UserService} from "$/server/services/user.service";
 
 export async function POST(request: NextRequest): Promise<Response>  {
-  const postData = await request.text();
-  const {email, password} = JSON.parse(postData);
+  const payload = await request.text();
+  const {email, password} = JSON.parse(payload);
 
   if (!email || !password) {
     return NextResponse.json(
