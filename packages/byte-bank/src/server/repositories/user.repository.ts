@@ -14,4 +14,8 @@ export class UserRepository {
 
     return this.model.create(data);
   }
+
+  async findByEmail(email: string) {
+    return this.model.findOne({ email });
+  }
 }
