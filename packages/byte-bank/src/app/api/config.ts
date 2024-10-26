@@ -9,6 +9,7 @@ async function request(response: object): Promise<Response>  {
       headers: DEFAULT_HEADERS,
     });
   } catch (error) {
+    console.log(error)
     return new Response(JSON.stringify({ error: "Erro no servidor" }), {
       status: ERROR_STATUS_CODE,
       headers: DEFAULT_HEADERS,

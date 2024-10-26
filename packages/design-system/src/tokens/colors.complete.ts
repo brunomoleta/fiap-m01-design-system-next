@@ -19,6 +19,10 @@ export default {
     hsl: "hsl(0, 0, 97)",
     hex: "#f8f8f8",
   },
+  "background-medium-green": {
+    hsl: "hsl(111, 48%, 43%)",
+    hex: "#47A138"
+  },
   "background-light-green": {
     hsl: "hsl(114, 22, 91)",
     hex: "#e6f8e6",
@@ -42,5 +46,13 @@ export default {
   "text-default": {
     hsl: "hsl(180, 10, 15)",
     hex: "#262626",
+  },
+  "text-grey": {
+    hsl: "hsl(111, 0%, 54%)",
+    hex: "#8B8B8B",
+  },
+  "text-warning": {
+    hsl: "hsl(0, 51%, 48%)",
+    hex: "#BA3C3C",
   },
 } as const;

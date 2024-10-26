@@ -1,0 +1,44 @@
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import {UserRepository} from '$/server/repositories/user.repository';
+
+export class UserService {
+  private userRepository: UserRepository;
+
+  constructor() {
+    this.userRepository = new UserRepository();
+  }
+
+  createUser = async (user: { name: string, email: string, password: string }) => {
+    try {
+      return await this.userRepository.create(user);
+    } catch (e) {
+      let errorMessage = "An error occurred.";
+      if (e instanceof Error) {
+        errorMessage = e.message;
+      }
+      throw new Error(errorMessage);
+    }
+  }
+  login = async ({ email, password }: { email: string, password: string }) => {
+    const user = await this.userRepository.findByEmail(email);
+    if (!user) {
+      throw new Error('Credenciais inválidas.');
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    if (!isPasswordCorrect) {
+      throw new Error('Credenciais inválidas.');
+    }
+
+    const token = jwt.sign(
+      { _id: user._id },
+      process.env.JWT_SECRET || 'privateKey',
+      { expiresIn: '20d' }
+    );
+
+    return { token };
+  }
+
+
+}

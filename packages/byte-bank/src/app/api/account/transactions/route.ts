@@ -1,14 +1,32 @@
-import { type NextRequest } from 'next/server'
-import request from "$/app/api/config";
-import mock from "$/app/api/mock.json";
+"use server";
 
-export async function GET(req: NextRequest): Promise<Response> {
-  const searchParams = req.nextUrl.searchParams;
-  const items = Number(searchParams.get('items'));
+import {NextRequest, NextResponse} from "next/server";
+import {TransactionService} from '$/server/services/transaction.service';
 
-  const transactions = items ? mock.account.transactions.slice(0, items) : mock.account.transactions;
+export async function GET(req: NextRequest) {
+  try {
+    const userId = req.headers.get('userId');
 
-  return request({
-    data: transactions,
-  });
+    if (!userId) {
+      return NextResponse.json({error: 'Missing userId in headers', status: 400});
+    }
+
+    const transactionService = new TransactionService();
+    const transactions = await transactionService.getAllTransactions(userId);
+
+    return NextResponse.json({transactions: transactions, status: 200})
+
+  } catch (e) {
+    console.error(e)
+    let errorMessage = "Server error.";
+    if (e instanceof Error) {
+      errorMessage = e.message;
+    }
+    return NextResponse.json(
+      {message: errorMessage},
+      {
+        status: 500,
+      }
+    );
+  }
 }
