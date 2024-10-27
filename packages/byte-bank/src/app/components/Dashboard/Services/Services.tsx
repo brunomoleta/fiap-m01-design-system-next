@@ -1,3 +1,4 @@
+import useUtilsStore from "$/app/store/utils.store";
 import { 
   WidgetContainer,
   CardIcon,
@@ -9,6 +10,8 @@ import {
 } from "../../../../../../design-system/src";
 
 const Services = () => {
+  const {setActiveTab} = useUtilsStore();
+
   const SERVICES_LIST = [
     {
       label: 'Empréstimo',
@@ -17,6 +20,8 @@ const Services = () => {
     {
       label: 'Meus cartões',
       Icon: CardIcon,
+      is_available: true,
+      action: () => setActiveTab('Meus cartões'),
     },
     {
       label: 'Doações',
@@ -43,13 +48,19 @@ const Services = () => {
     >
       <div className="flex flex-wrap gap-spacing-md">
         {(
-          SERVICES_LIST.map(({ label, Icon }, index) => (
+          SERVICES_LIST.map(({ label, Icon, is_available, action }, index) => (
             <div
               key={index}
-              className="cursor-pointer bg-white rounded-spacing-sm p-spacing-lg flex flex-wrap flex-col items-center min-w-fit gap-spacing-lg w-1/4 justify-center grow max-tablet:w-1/2"
-            >
-              <Icon />
-              <span className="text-headline-sm">{label}</span>
+              className="relative cursor-pointer bg-white rounded-spacing-sm p-spacing-lg  min-w-fit  w-1/4 grow max-tablet:w-1/2"
+              onClick={action}
+            > 
+              <div className={`${!is_available ? 'flex absolute' : 'hidden'} inset-0 rounded-spacing-sm items-center justify-center`}>
+                <span className="text-headline-sm">Em breve</span>
+              </div>
+              <div className={`flex flex-wrap flex-col items-center gap-spacing-lg justify-center ${is_available ? '' : 'blur-sm'}`}>
+                <Icon />
+                <span className="text-headline-sm">{label}</span>
+              </ div>
             </div>
             )
           )
