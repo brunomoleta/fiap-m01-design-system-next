@@ -93,31 +93,37 @@
     "cards": [
       {
         "card_holder": "Fulano de Tal",
-        "card_last_digits": 2435,
+        "card_last_digits": "2435",
         "card_expire_date": "10/30",
         "type": [
-          "credit"
+          "physical"
         ],
+        "function": "credit",
+        "category": "platinum",
         "is_active": true,
         "id": "RnVsYW5vIGRlIFRhbC0yNDM1"
       },
       {
         "card_holder": "Fulano de Tal",
-        "card_last_digits": 5432,
+        "card_last_digits": "5432",
         "card_expire_date": "12/27",
         "type": [
-          "credit"
+          "physical"
         ],
+        "function": "debit",
+        "category": "black",
         "is_active": true,
         "id": "RnVsYW5vIGRlIFRhbC01NDMy"
       },
       {
         "card_holder": "Fulano de Tal",
-        "card_last_digits": 3456,
+        "card_last_digits": "3456",
         "card_expire_date": "10/25",
         "type": [
-          "debit"
+          "digital"
         ],
+        "function": "multiple",
+        "category": "silver",
         "is_active": false,
         "id": "RnVsYW5vIGRlIFRhbC0zNDU2"
       }

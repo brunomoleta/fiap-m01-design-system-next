@@ -1,4 +1,4 @@
-import {Transaction, Services} from "$/app/components";
+import {Transaction, Services, Cards} from "$/app/components";
 import useUtilsStore from "$/app/store/utils.store";
 import useExtractStore from "$/app/store/extract.store";
 import useBalanceStore from "$/app/store/balance.store";
@@ -16,7 +16,7 @@ const Content = () => {
 
   return (<>
     {activeTab==='Início' && <Transaction refreshExtract={refreshData}/>}
-    {activeTab==='Transferências' && <div>TRANSFERÊNCIAS</div>}
+    {activeTab==='Meus cartões' && <div><Cards /></div>}
     {activeTab === 'Investimentos' && <Investments />}
     {activeTab === 'Outros Serviços' && <Services />}
   </>)
