@@ -1,21 +1,41 @@
-import request from "$/app/api/config";
+import {NextRequest, NextResponse} from "next/server";
+import {UserService} from "$/server/services/user.service";
 
-export async function POST(req: Request): Promise<Response>  {
-  const payload = await req.json();
-  const { login, password } = payload;
+export async function POST(request: NextRequest): Promise<Response>  {
+  const postData = await request.text();
+  const {email, password} = JSON.parse(postData);
 
-  if (!login || !password) {
-    return new Response(JSON.stringify({ error: "Usuário ou senha inválidos" }), {
-      status: 400,
-    });
+  if (!email || !password) {
+    return NextResponse.json(
+      { error: "É necessário enviar os campos: email e senha." },
+      {
+        status: 400,
+      }
+    );
   }
 
-  const token = Buffer.from(`${login}-${password}`).toString('base64');
+  try {
+    const userService = new UserService();
+    const { token } = await userService.login({ email, password });
 
-  return request({
-    data: {
-      token,
-    },
-    message: 'Login realizado com sucesso!',
-  });
+    return NextResponse.json({
+      data: {
+        token,
+      },
+      message: 'Login realizado com sucesso!'
+    });
+
+  } catch (error) {
+    console.error(error)
+    let errorMessage = "An error occurred.";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json(
+      { message: errorMessage },
+      {
+        status: 500,
+      }
+    );
+  }
 }
