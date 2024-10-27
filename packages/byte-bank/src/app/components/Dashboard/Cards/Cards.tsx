@@ -22,11 +22,11 @@ const Cards = () => {
         {
           (
             !cards.length ? 
-              Array.from(Array(3).keys()).map(() => (
-                <>
+              Array.from(Array(3).keys()).map((i) => (
+                <div key={i}>
                   <Skeleton />
                   <Skeleton className="h-44" />
-                </>)
+                </div>)
               ) :
               cards.map((card, index) => <CardComponent card={card} key={index} />))}
       </div>
