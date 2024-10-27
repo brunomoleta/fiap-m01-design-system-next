@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import React from "react";
+import {connectMongoDB} from '$/server/libs/mongoDB'
 
 import "./main.css";
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -15,6 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectMongoDB()
   return (
     <html lang="pt-BR">
       <body
