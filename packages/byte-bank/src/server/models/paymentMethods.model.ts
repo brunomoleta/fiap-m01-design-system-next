@@ -3,7 +3,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 export interface IPaymentMethod extends Document {
   cardNumber: string;
   cardName: string;
-  cardType: 'debit' | 'credit' | 'debit and credit';
+  cardType: 'debit' | 'credit' | 'multiple';
   expiryDate: string;
   cvv: string;
 }
@@ -11,7 +11,7 @@ export interface IPaymentMethod extends Document {
 export const PaymentMethodSchema: Schema = new mongoose.Schema({
   cardNumber: { type: String, required: true, match: [/^\d{16}$/, 'Card number must have 16 digits.'] },
   cardName: { type: String, required: true },
-  cardType: { type: String, enum: ['debit', 'credit', 'debit and credit'], required: true },
+  cardType: { type: String, enum: ['debit', 'credit', 'multiple'], required: true },
   expiryDate: { type: String, required: true },
   cvv: { type: String, required: true },
 });
