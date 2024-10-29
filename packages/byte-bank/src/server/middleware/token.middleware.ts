@@ -1,26 +1,33 @@
 import jwt, {JwtPayload as DefaultJwtPayload} from 'jsonwebtoken';
-import {NextApiRequest, NextApiResponse} from 'next';
+import { NextRequest } from "next/server";
 
 interface JwtPayload extends DefaultJwtPayload {
   _id: string;
+  name: string;
 }
 
-export const verifyToken = async (req: NextApiRequest, res: NextApiResponse): Promise<JwtPayload | null> => {
-  const authHeader = req.headers['authorization'];
-
-  if (!authHeader) {
-    res.status(401).json({ message: 'Token not found. Please log in.' });
-    return null;
-  }
-
-  const token = authHeader.split(' ')[1];
+export const verifyToken = (token: string): JwtPayload | null => {
+  const secret: string = 'a6.-hN;Gwp+#3V8'
 
   try {
-    return jwt.verify(token, process.env.SECRET_KEY!) as JwtPayload;
-
-  } catch (err) {
-    // Invalid token
-    res.status(403).json({ message: 'Invalid or expired token.' });
-    return null;
+    return jwt.verify(token, secret) as JwtPayload;
+  } catch (e) {
+    let errorMessage = "An error occurred.";
+    if (e instanceof Error) {
+      errorMessage = e.message;
+    }
+    throw new Error(errorMessage);
   }
+};
+
+export const verifyBearerToken = (req: NextRequest) => {
+  const authorization = req.headers.get('authorization');
+
+  if (!authorization) {
+    throw new Error('Token not found. Please log in.');
+  }
+
+  const token: string = authorization.split(' ')[1];
+
+  return verifyToken(token);
 };
