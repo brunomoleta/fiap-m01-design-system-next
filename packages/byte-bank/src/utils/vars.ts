@@ -46,4 +46,30 @@ export const MONTHS = [
   'dezembro',
 ];
 
-export const tabFields = ['Início', 'Transferências', 'Investimentos', 'Outros Serviços'];
+export const tabFields = ['Início', 'Meus cartões', 'Investimentos', 'Outros Serviços'];
+
+export const CARD_TYPES_LABELS = {
+  physical: 'Cartão físico',
+  digital: 'Cartão digital',
+};
+
+export const CARD_FUNCTIONS = [
+  {
+    label: 'Crédito',
+    value: 'credit',
+  },
+  {
+    label: 'Débito',
+    value: 'debit',
+  },
+  {
+    label: 'Crédito/Débito',
+    value: 'multiple',
+  },
+];
+
+export const CARD_FUNCTION_LABELS = {
+  debit: 'Débito',
+  credit: 'Crédito',
+  multiple: 'Crédito/Débito'
+};

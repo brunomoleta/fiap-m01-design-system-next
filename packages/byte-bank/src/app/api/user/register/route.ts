@@ -6,11 +6,11 @@ import {UserService} from "$/server/services/user.service";
 export async function POST(req: NextRequest) {
 
   const payload = await req.text();
-  const { name, email, password } = JSON.parse(payload);
+  const {name, email, password} = JSON.parse(payload);
 
   if (!email || !password || !name) {
     return NextResponse.json(
-      { error: "São necessários os campos: name, email e password." },
+      {error: "São necessários os campos: name, email e password."},
       {
         status: 400,
       }
@@ -21,12 +21,14 @@ export async function POST(req: NextRequest) {
 
   try {
     const newUser = await userService.createUser({name, email, password});
+
     return NextResponse.json(
-      { message: 'Usuário criado com sucesso', user: newUser },
+      {message: 'Usuário criado com sucesso', user: {name: newUser.name, email: newUser.email}},
       {
         status: 201,
       }
     );
+
   } catch (e) {
     console.error(e)
     let errorMessage = "An error occurred.";
@@ -34,7 +36,7 @@ export async function POST(req: NextRequest) {
       errorMessage = e.message;
     }
     return NextResponse.json(
-      { message: errorMessage },
+      {message: errorMessage},
       {
         status: 500,
       }

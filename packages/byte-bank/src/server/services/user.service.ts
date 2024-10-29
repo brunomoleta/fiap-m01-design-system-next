@@ -32,13 +32,11 @@ export class UserService {
     }
 
     const token = jwt.sign(
-      { _id: user._id },
+      { _id: user._id, name: user.name },
       process.env.JWT_SECRET || 'privateKey',
       { expiresIn: '20d' }
     );
 
     return { token };
   }
-
-
 }

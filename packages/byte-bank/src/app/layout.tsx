@@ -3,6 +3,8 @@ import React from "react";
 import {connectMongoDB} from '$/server/libs/mongoDB'
 
 import "./main.css";
+import 'react-loading-skeleton/dist/skeleton.css';
+import { SkeletonTheme } from "react-loading-skeleton";
 
 export const metadata: Metadata = {
   title: "Página inicial | Bytebank",
@@ -19,7 +21,9 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body
       >
-        {children}
+        <SkeletonTheme baseColor="#9D9D9D" highlightColor="#f8f8f8">
+          {children}
+        </SkeletonTheme>
       </body>
     </html>
   );
