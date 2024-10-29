@@ -9,9 +9,9 @@ export async function PUT(req: Request, { params }: { params: Params }): Promise
   const { id } = params;
   const payload = await req.json();
 
-  const { type, is_active } = payload;
+  const { function: cardFunction, is_active } = payload;
 
-  if (!is_active && !type) {
+  if (!('is_active' in payload) && !cardFunction) {
     return new Response(JSON.stringify({ error: "Não foram informados dados para edição" }), {
       status: 400,
     });
@@ -21,7 +21,7 @@ export async function PUT(req: Request, { params }: { params: Params }): Promise
 
   mock.account.cards[index] = {
     ...mock.account.cards[index],
-    type: type === undefined ? mock.account.cards[index].type : type,
+    function: cardFunction === undefined ? mock.account.cards[index].function : cardFunction,
     is_active: is_active === undefined ? mock.account.cards[index].is_active : is_active,
   };
 

@@ -23,7 +23,7 @@ const useTransactionStore = create<TransactionStore>((set, get) => ({
     } = useUtilsStore.getState();
 
     const transactionValue = get().transactionValue;
-    const transactionType = get().transactionValue;
+    const transactionType = get().transactionType;
 
     if (!transactionValue || isNaN(Number(transactionValue))) {
       setShowAlert(true, "invalid");
@@ -34,7 +34,6 @@ const useTransactionStore = create<TransactionStore>((set, get) => ({
 
     try {
       const nValue = Number(transactionValue);
-
       const payload: TransactionType = {
         value: transactionType === 'deposito' ? Math.abs(nValue) : -Math.abs(nValue),
         type_slug: transactionType,
