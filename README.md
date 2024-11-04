@@ -222,14 +222,12 @@ na programação o que temos na parte do Design em nosso Figma.
 
 # 💸️ Aplicação financeira
 
-# 🖼️ Design System
-
 Esse repositório abriga a aplicação financeira, sua lógica de negócio, APIs, rotas e toda
 a plataforma com a qual o usuário vai interagir.
 
 ## 📚 Tecnologias utilizadas
 
-### DS Principais
+### Principais
 - [React](https://react.dev/): É uma biblioteca JavaScript para construir interfaces de usuário reativas e escaláveis.
 - [Next.js](https://nextjs.org/): Framework de React que possibilita a utilização do Front end no Back end.
 - [React DOM](https://www.npmjs.com/package/react-dom): É um pacote para manipular elementos do DOM no React, fornecendo uma maneira fácil de renderizar componentes React no navegador.
@@ -245,7 +243,6 @@ a plataforma com a qual o usuário vai interagir.
 
 ## 🏗️ Arquitetura do Byte Bank
 > Partindo do pressuposto que estamos em ``./packages/byte-bank/``
-
 
 ```bash
 ├── src
@@ -324,7 +321,7 @@ a plataforma com a qual o usuário vai interagir.
 ├── tailwind.config.ts
 └── tsconfig.json
 ```
-### 📷 Design System Geral
+### 📷 Byte Bank Geral
 
 - `packages/byte-bank/`: O nosso pacote "core", onde todo o Byte Bank de fato está;
 - `packages/byte-bank/.next`: Configurações do Next JS;
