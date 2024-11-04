@@ -1,10 +1,12 @@
-import type {Metadata} from "next";
+// layout.tsx
+import type { Metadata } from "next";
 import React from "react";
-import {connectMongoDB} from '$/server/libs/mongoDB'
-
+import { connectMongoDB } from '$/server/libs/mongoDB';
 import "./main.css";
 import 'react-loading-skeleton/dist/skeleton.css';
 import { SkeletonTheme } from "react-loading-skeleton";
+import { UserProvider } from "./contexts/UserContext";
+
 
 export const metadata: Metadata = {
   title: "Página inicial | Bytebank",
@@ -16,14 +18,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  connectMongoDB()
+  connectMongoDB();
   return (
     <html lang="pt-BR">
-      <body
-      >
-        <SkeletonTheme baseColor="#9D9D9D" highlightColor="#f8f8f8">
-          {children}
-        </SkeletonTheme>
+      <body>
+        <UserProvider>
+          <SkeletonTheme baseColor="#9D9D9D" highlightColor="#f8f8f8">
+            {children}
+          </SkeletonTheme>
+        </UserProvider>
       </body>
     </html>
   );
