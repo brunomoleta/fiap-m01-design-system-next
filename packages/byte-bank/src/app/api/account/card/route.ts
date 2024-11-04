@@ -1,5 +1,5 @@
 import request from "$/app/api/config";
-import mock from "$/app/api/mock.json";
+import mock from "$/app/api/mock";
 
 export async function POST(req: Request): Promise<Response>  {
   const { card_holder, card_last_digits, card_expire_date, type, is_active } = await req.json();

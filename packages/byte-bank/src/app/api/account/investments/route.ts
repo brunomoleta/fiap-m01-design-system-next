@@ -1,5 +1,5 @@
 import request from "$/app/api/config";
-import mock from "$/app/api/mock.json";
+import mock from "$/app/api/mock";
 
 export async function GET(): Promise<Response> {
   const investments = {
