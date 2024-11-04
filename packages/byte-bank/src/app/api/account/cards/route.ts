@@ -1,6 +1,6 @@
 import { type NextRequest } from 'next/server'
 import request from "$/app/api/config";
-import mock from "$/app/api/mock.json";
+import mock from "$/app/api/mock";
 
 export async function GET(req: NextRequest): Promise<Response> {
   const searchParams = req.nextUrl.searchParams;
