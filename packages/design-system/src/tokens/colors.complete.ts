@@ -7,11 +7,11 @@ export default {
     hsl: "hsl(192, 100, 19)",
     hex: "#006633",
   },
-  "background-dark-grey": {
+  "background-medium-grey": {
     hsl: "hsl(183, 22, 89)",
     hex: "#e6e6e6",
   },
-  "background-medium-grey": {
+  "background-dark-grey": {
     hsl: "hsl(0, 0, 80)",
     hex: "#cccccc",
   },

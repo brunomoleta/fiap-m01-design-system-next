@@ -222,3 +222,126 @@ na programação o que temos na parte do Design em nosso Figma.
 
 # 💸️ Aplicação financeira
 
+# 🖼️ Design System
+
+Esse repositório abriga a aplicação financeira, sua lógica de negócio, APIs, rotas e toda
+a plataforma com a qual o usuário vai interagir.
+
+## 📚 Tecnologias utilizadas
+
+### DS Principais
+- [React](https://react.dev/): É uma biblioteca JavaScript para construir interfaces de usuário reativas e escaláveis.
+- [Next.js](https://nextjs.org/): Framework de React que possibilita a utilização do Front end no Back end.
+- [React DOM](https://www.npmjs.com/package/react-dom): É um pacote para manipular elementos do DOM no React, fornecendo uma maneira fácil de renderizar componentes React no navegador.
+- [Axios](https://www.npmjs.com/package/axios): Cliente HTTP baseado em promessas para o navegador.
+- [JSON Web Token](https://www.npmjs.com/package/jsonwebtoken): É uma biblioteca para implementação de tokens JWT.
+- [Typescript](https://www.typescriptlang.org/docs/): Superset de Javascript para torná-lo mais robusto em ambiente de desenvolvimento.
+- [ChartJS](https://www.chartjs.org/): Biblioteca para uso de gráficos.
+- [React Loading Skeleton](https://www.npmjs.com/package/react-loading-skeleton): Biblioteca para criação de estados de loading com skeletons animados.
+- [Radix UI](https://www.radix-ui.com/): Módulo utilizado para criação de menu flutuante.
+- [Dotenv](https://www.npmjs.com/package/dotenv): Biblioteca para facilitar o carregamento de variáveis de ambientes.
+- [Mongoose](https://mongoosejs.com/): Biblioteca para estabelecer a conexão enter o MongoDB e o ambiente de execução. POC.
+- [Zustand](https://github.com/pmndrs/zustand): Biblioteca para gerenciamento de estado.
+
+## 🏗️ Arquitetura do Byte Bank
+> Partindo do pressuposto que estamos em ``./packages/byte-bank/``
+
+
+```bash
+├── src
+│   ├── app
+│   │   ├── not_found
+│   │   │   └── data.ts
+│   │   │   └── layout.tsx
+│   │   │   └── not-found.tsx
+│   │   │   └── page.ts
+│   │   ├── api
+│   │   │   ├── account
+│   │   │   │   └── balance
+│   │   │   │   └── card
+│   │   │   │   └── cards
+│   │   │   │   └── investments
+│   │   │   │   └── transaction
+│   │   │   │   └── transactions
+│   │   │   └── user
+│   │   │       └── id
+│   │   │       └── login
+│   │   │       └── register
+│   │   ├── components
+│   │   │   ├── Dashboard
+│   │   │   │   └── Balance
+│   │   │   │   └── Cards
+│   │   │   │   └── Content
+│   │   │   │   └── EditUser
+│   │   │   │   └── Extract
+│   │   │   │   └── Investments
+│   │   │   │   └── NavigationMenu
+│   │   │   │   └── Services
+│   │   │   │   └── Transaction
+│   │   │   ├── Header
+│   │   │   │   └── HeaderAuth
+│   │   │   │   └── HeaderBtns
+│   │   │   │   └── HeaderLinks
+│   │   │   │   └── LogoLink
+│   │   │   │   └── NotLoggedHeader
+│   │   │   └── Footer
+│   │   ├── store
+│   │   │   ├── balance.store.ts
+│   │   │   ├── cards.store.ts
+│   │   │   ├── extract.store.ts
+│   │   │   ├── investments.store.ts
+│   │   │   ├── transaction.store.ts
+│   │   │   ├── utils.store.ts
+│   │   │   └── Footer
+│   │   ├── layout.tsx
+│   │   ├── main.css
+│   │   └── page.tsx
+│   ├── requests
+│   │   ├── dashboard 
+│   │   └── config.ts 
+│   ├── types
+│   ├── utils
+│   │   ├── index.ts 
+│   │   └── vars.ts 
+│   └── server
+│       ├── libs
+│       │   └── mongoDB.ts
+│       ├── models
+│       │   └── investments.model.ts
+│       │   └── paymentMethods.model.ts
+│       │   └── transaction.model.ts
+│       │   └── user.model.ts
+│       ├── repositories
+│       │   └── user.repository.ts
+│       ├── services
+│       │   └── user.service.ts
+│       └── envConfig.ts
+├── .eslintrc.json
+├── .gitignore
+├── next.config.mjs
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+```
+### 📷 Design System Geral
+
+- `packages/byte-bank/`: O nosso pacote "core", onde todo o Byte Bank de fato está;
+- `packages/byte-bank/.next`: Configurações do Next JS;
+
+### 🧩 App
+
+- `src/app`: Arquivos externos que ajuda a formar componentes como `.png` e `.svg`;
+- `src/app/[...not_found]`: Configurações para rota de fallback;
+- `src/app/api/[*]`: Todos os arquivos da API BFF (Backend For Frontend) do Next JS, agrupadas 
+por tema;
+- `src/app/api/config.ts`: Arquivo com as configurações gerais para o retorno dos endpoints;
+- `src/app/api/mock.json`: Mock de banco de dados;
+- `src/app/components`: Componentes que montam a aplicação, separados e agrupados por tema. 
+Podem possuir regras de negócio simples, principalmente relacionadas a UI e tratamento de dados;
+- `src/app/store`: Hooks que agrupam regras de interação com APIS e estados reativos;
+- `src/app/requests`: Funções básicas para interação com endpoints, e configuração da instância
+do Axios;
+- `src/app/server`: Estudo para integração com banco de dados.
+- `src/app/types`: Declaração de tipos para o Typescript;
+- `src/app/utils`: Funções de uso geral e variáveis globais;

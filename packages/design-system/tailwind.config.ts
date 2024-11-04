@@ -23,8 +23,8 @@ const config: Config = {
       colors: {
         "background-accent": "hsl(9, 100%, 60%)",
         "background-default": "hsl(192, 100%, 19%)",
-        "background-dark-grey": "hsl(183, 22%, 89%)",
-        "background-medium-grey": "hsl(0, 0%, 80%)",
+        "background-dark-grey": "hsl(0, 0%, 80%)",
+        "background-medium-grey": "hsl(183, 22%, 89%)",
         "background-light-grey": "hsl(0, 0%, 97%)",
         "background-medium-green": "hsl(111, 48%, 43%)",
         "background-light-green": "hsl(114, 22%, 91%)",
