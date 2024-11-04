@@ -5,6 +5,8 @@ export const getBalance = () => request.get('/account/balance');
 
 export const postTransaction = (t: TransactionType) => request.post('/account/transaction', t);
 
+export const editTransaction = (t: TransactionType) => request.put('/account/transaction', t);
+
 export const getInvestments = () => request.get(`/account/investments`);
 
 export const getCards = () => request.get(`/account/cards`);
