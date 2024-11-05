@@ -1,29 +1,35 @@
 'use client'
 
-import {Button, Input, Select, WidgetContainer} from "../../../../../../design-system/src";
-import {formatCurrency} from "$/utils";
+import { Button, Input, Select, WidgetContainer } from "../../../../../../design-system/src";
+import { formatCurrency } from "$/utils";
 import useExtractStore from "$/app/store/extract.store";
-import {getExtractDate, getTransactionLabel} from "$/app/components/Dashboard/Extract/extract.utils";
+import { getExtractDate, getTransactionLabel } from "$/app/components/Dashboard/Extract/extract.utils";
 import Skeleton from "react-loading-skeleton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TransactionType } from "$/types";
 import { TRANSACTION_TYPES } from "$/utils/vars";
 import useEditTransactionStore from "$/app/store/editTransaction.store";
-import { useRouter } from 'next/navigation';
+import { useUser } from "$/app/contexts/UserContext"; // Importe o contexto
 
 const Extract = () => {
-  const router = useRouter();
+  const { userId } = useUser();
 
-  const {extract} = useExtractStore();
+  const { extract, fetchExtractData } = useExtractStore();
   const { updateTransaction, transactionType, setTransactionType, transactionValue, setTransactionValue } = useEditTransactionStore();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTransaction, setSelectedTransaction] = useState<TransactionType | null>(null);
 
+  useEffect(() => {
+    if (userId) {
+      fetchExtractData(userId);
+    }
+  }, [userId, fetchExtractData]);
+
   const handleEditClick = (transaction: TransactionType) => {
     setSelectedTransaction(transaction);
-    setTransactionType(transaction.type_slug); 
-    setTransactionValue(Math.abs(transaction.value).toString()); 
+    setTransactionType(transaction.type_slug);
+    setTransactionValue(Math.abs(transaction.value).toString());
     setIsModalOpen(true);
   };
 
@@ -40,65 +46,54 @@ const Extract = () => {
         value: Number(transactionValue),
       };
       await updateTransaction(updatedTransaction, () => {
-        closeModal(); 
+        closeModal();
         window.location.reload();
-      }); 
+      });
     }
   };
 
   return (
-    <WidgetContainer
-      backgroundColor="background-light-grey"
-      title="Extrato"
-    >
+    <WidgetContainer backgroundColor="background-light-grey" title="Extrato">
       <div className="flex flex-col gap-spacing-md min-w-56 max-tablet:min-w-full">
         {
-          (
-            !extract.length ?
-            Array.from(Array(5).keys()).map((i) => (
-              <div key={i} className="border-b border-text-active">
-                <div className="flex flex-col gap-spacing-sm">
-                  <Skeleton count={4} />
-                </div>
-              </div>)
-            ) :
+          extract?.length === 0 ? (
+            <p className="text-text-grey">Nenhuma transação encontrada.</p>
+          ) : (
             extract.map(({ date, type_slug, value, id }) => (
               <div key={id} className="flex items-center justify-between pb-spacing-sm border-b border-text-active">
-                <>
-                  <div className="flex flex-col gap-spacing-sm">
-                    <span className="text-text-sm text-text-active capitalize">{getExtractDate(date).month}</span>
-                    <span className="text-text-baseline">{getTransactionLabel(type_slug)}</span>
-                    <span className="text-headline-sm font-bold">{formatCurrency(value)}</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <span className="text-text-sm text-text-grey">{getExtractDate(date).formattedDate}</span>
-                    <span 
-                      className="text-text-sm capitalize cursor-pointer text-text-active"
-                      onClick={() => handleEditClick({ date, type_slug, value, id })}
-                    >
-                      Editar
-                    </span>
-                  </div>
-                </>
-              </div>))
+                <div className="flex flex-col gap-spacing-sm">
+                  <span className="text-text-sm text-text-active capitalize">{getExtractDate(date).month}</span>
+                  <span className="text-text-baseline">{getTransactionLabel(type_slug)}</span>
+                  <span className="text-headline-sm font-bold">{formatCurrency(value)}</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-text-sm text-text-grey">{getExtractDate(date).formattedDate}</span>
+                  <span
+                    className="text-text-sm capitalize cursor-pointer text-text-active"
+                    onClick={() => handleEditClick({ date, type_slug, value, id })}
+                  >
+                    Editar
+                  </span>
+                </div>
+              </div>
+            ))
           )
         }
+
       </div>
       {isModalOpen && selectedTransaction && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded shadow-lg max-w-sm w-full">
             <h2 className="text-lg font-bold mb-5">Editar Transação</h2>
 
-            {/* Select para o tipo de transação */}
             <div className="flex flex-col gap-spacing-xl grow order-2">
               <Select
                 name="transaction-type"
                 options={TRANSACTION_TYPES}
-                value={transactionType} // Usa o valor do estado de edição do store
+                value={transactionType}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) => setTransactionType(event.target.value)}
               />
 
-              {/* Input para editar o valor da transação */}
               <Input
                 name="transaction-value"
                 label="Valor"
@@ -106,7 +101,7 @@ const Extract = () => {
                 inputMode="numeric"
                 pattern="[0-9]*"
                 placeholder="00,00"
-                value={transactionValue} // Usa o valor do estado de edição do store
+                value={transactionValue}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTransactionValue(event.target.value)}
               />
 
@@ -119,7 +114,7 @@ const Extract = () => {
         </div>
       )}
     </WidgetContainer>
-  )
+  );
 };
 
 export default Extract;
