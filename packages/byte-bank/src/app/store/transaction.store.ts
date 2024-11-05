@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 import { TransactionType } from "$/types";
 import { postTransaction } from "$/requests/dashboard";
 import useUtilsStore from "$/app/store/utils.store";
@@ -8,19 +8,18 @@ type TransactionStore = {
   transactionValue: string;
   setTransactionType: (transactionType: string) => void;
   setTransactionValue: (transactionValue: string) => void;
-  fetchData: (callback: () => void) => Promise<void>;
+  fetchData: (callback: () => void, userId?: string) => Promise<void>; // Permitir userId opcional
 };
 
 const useTransactionStore = create<TransactionStore>((set, get) => ({
-  transactionType: 'deposito',
-  transactionValue: '',
+  transactionType: "deposito",
+  transactionValue: "",
   setTransactionType: (transactionType: string) => set({ transactionType }),
   setTransactionValue: (transactionValue: string) => set({ transactionValue }),
 
-  fetchData: async (callback: () => void) => {
-    const {
-      setShowAlert, setLoading,
-    } = useUtilsStore.getState();
+  fetchData: async (callback: () => void, userId?: string) => {
+    // userId como opcional
+    const { setShowAlert, setLoading } = useUtilsStore.getState();
 
     const transactionValue = get().transactionValue;
     const transactionType = get().transactionType;
@@ -35,23 +34,25 @@ const useTransactionStore = create<TransactionStore>((set, get) => ({
     try {
       const nValue = Number(transactionValue);
       const payload: TransactionType = {
-        value: transactionType === 'deposito' ? Math.abs(nValue) : -Math.abs(nValue),
+        value:
+          transactionType === "deposito" ? Math.abs(nValue) : -Math.abs(nValue),
         type_slug: transactionType,
         date: new Date().getTime(),
+        id: userId ?? "", // Defina um valor padrão caso userId seja undefined
       };
 
       await postTransaction(payload);
 
-      setShowAlert(true, 'success');
+      setShowAlert(true, "success");
 
       callback();
     } catch (error) {
-      console.error('Erro ao criar transação', error);
+      console.error("Erro ao criar transação", error);
 
-      setShowAlert(true, 'error');
+      setShowAlert(true, "error");
     } finally {
       setLoading(false);
-      set({ transactionValue: '' });
+      set({ transactionValue: "" });
 
       setTimeout(() => setShowAlert(false), 5000);
     }
