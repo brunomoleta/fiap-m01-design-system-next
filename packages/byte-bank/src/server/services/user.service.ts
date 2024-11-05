@@ -44,7 +44,7 @@ export class UserService {
       { expiresIn: "20d" }
     );
 
-    return { token: token, name: user.name };
+    return { token: token, name: user.name, id: user.id };
   };
 
   updateUser = async (

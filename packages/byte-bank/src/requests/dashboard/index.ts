@@ -8,7 +8,6 @@ function convertTransaction(transaction: TransactionType) {
     amount: transaction.value, // Mapeia `value` para `amount`
     user: transaction.id, // Mapeia `id` para `user`
   });
-  debugger;
 
   return {
     type: transaction.type_slug, // Mapeia `type_slug` para `type`

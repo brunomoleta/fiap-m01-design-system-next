@@ -6,7 +6,7 @@ import useUtilsStore from "$/app/store/utils.store";
 
 interface Props {
   refreshExtract: () => void;
-  userId: string; // Adicionar userId como propriedade
+  userId: string;
 }
 
 const TransactionForm = ({ refreshExtract, userId }: Props) => {
@@ -14,9 +14,15 @@ const TransactionForm = ({ refreshExtract, userId }: Props) => {
   const { transactionType, setTransactionType, fetchData, setTransactionValue, transactionValue } =
     useTransactionStore();
 
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    fetchData(refreshExtract, userId);
+    window.location.reload();
+  };
+
   return (
     <>
-      <form onSubmit={() => fetchData(refreshExtract, userId)} className="flex flex-col gap-spacing-xl grow order-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-spacing-xl grow order-2">
         <Select
           name="transaction-type"
           options={TRANSACTION_TYPES}
@@ -33,7 +39,7 @@ const TransactionForm = ({ refreshExtract, userId }: Props) => {
           value={transactionValue}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTransactionValue(event.target.value)}
         />
-        <Button variant="secondary" onClick={() => fetchData(refreshExtract, userId)} disabled={loading}>
+        <Button type="submit" variant="secondary" disabled={loading}>
           Concluir transação
         </Button>
       </form>

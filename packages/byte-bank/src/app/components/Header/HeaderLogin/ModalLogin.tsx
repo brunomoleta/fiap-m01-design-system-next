@@ -16,7 +16,7 @@ const ModalLogin: React.FC<ModalLoginProps> = ({ isOpen, onClose, isLogin }) => 
     const [formData, setFormData] = useState({ name: "", email: "", password: "" });
     const [emailError, setEmailError] = useState("");
     const router = useRouter();
-    const { setUserName } = useUser();
+    const { setUserName, setUserId } = useUser();
 
     useEffect(() => setIsLoginMode(isLogin), [isLogin]);
 
@@ -47,9 +47,13 @@ const ModalLogin: React.FC<ModalLoginProps> = ({ isOpen, onClose, isLogin }) => 
             if (isLoginMode) {
                 const login = await loginUser({ email: formData.email, password: formData.password });
                 setUserName(login.data.data.name);
+                setUserId(login.data.data.id)
             } else {
-                await registerUser(formData);
+                const user = await registerUser(formData);
+
                 setUserName(formData.name);
+                setUserId(user.data.user._id)
+
                 setIsLoginMode(true);
             }
             router.push('/dashboard');
