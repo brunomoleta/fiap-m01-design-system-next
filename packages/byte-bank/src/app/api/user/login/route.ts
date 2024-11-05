@@ -16,12 +16,13 @@ export async function POST(request: NextRequest): Promise<Response> {
 
   try {
     const userService = new UserService();
-    const { token, name } = await userService.login({ email, password });
+    const { token, name, id } = await userService.login({ email, password });
 
     return NextResponse.json({
       data: {
         token,
         name,
+        id,
       },
       message: "Login realizado com sucesso!",
     });
